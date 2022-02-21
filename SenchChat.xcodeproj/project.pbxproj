@@ -1,0 +1,626 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F3554FDB27C393FB00B28BA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3554FDA27C393FB00B28BA3 /* AppDelegate.swift */; };
+		F3554FDD27C393FB00B28BA3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3554FDC27C393FB00B28BA3 /* SceneDelegate.swift */; };
+		F3554FDF27C393FB00B28BA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3554FDE27C393FB00B28BA3 /* ViewController.swift */; };
+		F3554FE227C393FB00B28BA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3554FE027C393FB00B28BA3 /* Main.storyboard */; };
+		F3554FE527C393FB00B28BA3 /* SenchChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3554FE327C393FB00B28BA3 /* SenchChat.xcdatamodeld */; };
+		F3554FE727C393FD00B28BA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3554FE627C393FD00B28BA3 /* Assets.xcassets */; };
+		F3554FEA27C393FD00B28BA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3554FE827C393FD00B28BA3 /* LaunchScreen.storyboard */; };
+		F3554FF527C393FD00B28BA3 /* SenchChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3554FF427C393FD00B28BA3 /* SenchChatTests.swift */; };
+		F3554FFF27C393FE00B28BA3 /* SenchChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3554FFE27C393FE00B28BA3 /* SenchChatUITests.swift */; };
+		F355500127C393FE00B28BA3 /* SenchChatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F355500027C393FE00B28BA3 /* SenchChatUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F3554FF127C393FD00B28BA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3554FCF27C393FB00B28BA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3554FD627C393FB00B28BA3;
+			remoteInfo = SenchChat;
+		};
+		F3554FFB27C393FE00B28BA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3554FCF27C393FB00B28BA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3554FD627C393FB00B28BA3;
+			remoteInfo = SenchChat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F3554FD727C393FB00B28BA3 /* SenchChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SenchChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3554FDA27C393FB00B28BA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F3554FDC27C393FB00B28BA3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F3554FDE27C393FB00B28BA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F3554FE127C393FB00B28BA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F3554FE427C393FB00B28BA3 /* SenchChat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SenchChat.xcdatamodel; sourceTree = "<group>"; };
+		F3554FE627C393FD00B28BA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F3554FE927C393FD00B28BA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F3554FEB27C393FD00B28BA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3554FF027C393FD00B28BA3 /* SenchChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SenchChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3554FF427C393FD00B28BA3 /* SenchChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenchChatTests.swift; sourceTree = "<group>"; };
+		F3554FFA27C393FE00B28BA3 /* SenchChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SenchChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3554FFE27C393FE00B28BA3 /* SenchChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenchChatUITests.swift; sourceTree = "<group>"; };
+		F355500027C393FE00B28BA3 /* SenchChatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenchChatUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F3554FD427C393FB00B28BA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3554FED27C393FD00B28BA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3554FF727C393FE00B28BA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F3554FCE27C393FB00B28BA3 = {
+			isa = PBXGroup;
+			children = (
+				F3554FD927C393FB00B28BA3 /* SenchChat */,
+				F3554FF327C393FD00B28BA3 /* SenchChatTests */,
+				F3554FFD27C393FE00B28BA3 /* SenchChatUITests */,
+				F3554FD827C393FB00B28BA3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F3554FD827C393FB00B28BA3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F3554FD727C393FB00B28BA3 /* SenchChat.app */,
+				F3554FF027C393FD00B28BA3 /* SenchChatTests.xctest */,
+				F3554FFA27C393FE00B28BA3 /* SenchChatUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F3554FD927C393FB00B28BA3 /* SenchChat */ = {
+			isa = PBXGroup;
+			children = (
+				F3554FDA27C393FB00B28BA3 /* AppDelegate.swift */,
+				F3554FDC27C393FB00B28BA3 /* SceneDelegate.swift */,
+				F3554FDE27C393FB00B28BA3 /* ViewController.swift */,
+				F3554FE027C393FB00B28BA3 /* Main.storyboard */,
+				F3554FE627C393FD00B28BA3 /* Assets.xcassets */,
+				F3554FE827C393FD00B28BA3 /* LaunchScreen.storyboard */,
+				F3554FEB27C393FD00B28BA3 /* Info.plist */,
+				F3554FE327C393FB00B28BA3 /* SenchChat.xcdatamodeld */,
+			);
+			path = SenchChat;
+			sourceTree = "<group>";
+		};
+		F3554FF327C393FD00B28BA3 /* SenchChatTests */ = {
+			isa = PBXGroup;
+			children = (
+				F3554FF427C393FD00B28BA3 /* SenchChatTests.swift */,
+			);
+			path = SenchChatTests;
+			sourceTree = "<group>";
+		};
+		F3554FFD27C393FE00B28BA3 /* SenchChatUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F3554FFE27C393FE00B28BA3 /* SenchChatUITests.swift */,
+				F355500027C393FE00B28BA3 /* SenchChatUITestsLaunchTests.swift */,
+			);
+			path = SenchChatUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F3554FD627C393FB00B28BA3 /* SenchChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F355500427C393FE00B28BA3 /* Build configuration list for PBXNativeTarget "SenchChat" */;
+			buildPhases = (
+				F3554FD327C393FB00B28BA3 /* Sources */,
+				F3554FD427C393FB00B28BA3 /* Frameworks */,
+				F3554FD527C393FB00B28BA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SenchChat;
+			productName = SenchChat;
+			productReference = F3554FD727C393FB00B28BA3 /* SenchChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F3554FEF27C393FD00B28BA3 /* SenchChatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F355500727C393FE00B28BA3 /* Build configuration list for PBXNativeTarget "SenchChatTests" */;
+			buildPhases = (
+				F3554FEC27C393FD00B28BA3 /* Sources */,
+				F3554FED27C393FD00B28BA3 /* Frameworks */,
+				F3554FEE27C393FD00B28BA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3554FF227C393FD00B28BA3 /* PBXTargetDependency */,
+			);
+			name = SenchChatTests;
+			productName = SenchChatTests;
+			productReference = F3554FF027C393FD00B28BA3 /* SenchChatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F3554FF927C393FE00B28BA3 /* SenchChatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F355500A27C393FE00B28BA3 /* Build configuration list for PBXNativeTarget "SenchChatUITests" */;
+			buildPhases = (
+				F3554FF627C393FE00B28BA3 /* Sources */,
+				F3554FF727C393FE00B28BA3 /* Frameworks */,
+				F3554FF827C393FE00B28BA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3554FFC27C393FE00B28BA3 /* PBXTargetDependency */,
+			);
+			name = SenchChatUITests;
+			productName = SenchChatUITests;
+			productReference = F3554FFA27C393FE00B28BA3 /* SenchChatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F3554FCF27C393FB00B28BA3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					F3554FD627C393FB00B28BA3 = {
+						CreatedOnToolsVersion = 13.2;
+					};
+					F3554FEF27C393FD00B28BA3 = {
+						CreatedOnToolsVersion = 13.2;
+						TestTargetID = F3554FD627C393FB00B28BA3;
+					};
+					F3554FF927C393FE00B28BA3 = {
+						CreatedOnToolsVersion = 13.2;
+						TestTargetID = F3554FD627C393FB00B28BA3;
+					};
+				};
+			};
+			buildConfigurationList = F3554FD227C393FB00B28BA3 /* Build configuration list for PBXProject "SenchChat" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F3554FCE27C393FB00B28BA3;
+			productRefGroup = F3554FD827C393FB00B28BA3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F3554FD627C393FB00B28BA3 /* SenchChat */,
+				F3554FEF27C393FD00B28BA3 /* SenchChatTests */,
+				F3554FF927C393FE00B28BA3 /* SenchChatUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F3554FD527C393FB00B28BA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3554FEA27C393FD00B28BA3 /* LaunchScreen.storyboard in Resources */,
+				F3554FE727C393FD00B28BA3 /* Assets.xcassets in Resources */,
+				F3554FE227C393FB00B28BA3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3554FEE27C393FD00B28BA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3554FF827C393FE00B28BA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F3554FD327C393FB00B28BA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3554FDF27C393FB00B28BA3 /* ViewController.swift in Sources */,
+				F3554FDB27C393FB00B28BA3 /* AppDelegate.swift in Sources */,
+				F3554FDD27C393FB00B28BA3 /* SceneDelegate.swift in Sources */,
+				F3554FE527C393FB00B28BA3 /* SenchChat.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3554FEC27C393FD00B28BA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3554FF527C393FD00B28BA3 /* SenchChatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3554FF627C393FE00B28BA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F355500127C393FE00B28BA3 /* SenchChatUITestsLaunchTests.swift in Sources */,
+				F3554FFF27C393FE00B28BA3 /* SenchChatUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F3554FF227C393FD00B28BA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F3554FD627C393FB00B28BA3 /* SenchChat */;
+			targetProxy = F3554FF127C393FD00B28BA3 /* PBXContainerItemProxy */;
+		};
+		F3554FFC27C393FE00B28BA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F3554FD627C393FB00B28BA3 /* SenchChat */;
+			targetProxy = F3554FFB27C393FE00B28BA3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F3554FE027C393FB00B28BA3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F3554FE127C393FB00B28BA3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F3554FE827C393FD00B28BA3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F3554FE927C393FD00B28BA3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F355500227C393FE00B28BA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F355500327C393FE00B28BA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F355500527C393FE00B28BA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WLMWR54MBP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SenchChat/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = smu117.SenchChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F355500627C393FE00B28BA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WLMWR54MBP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SenchChat/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = smu117.SenchChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F355500827C393FE00B28BA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WLMWR54MBP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = smu117.SenchChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SenchChat.app/SenchChat";
+			};
+			name = Debug;
+		};
+		F355500927C393FE00B28BA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WLMWR54MBP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = smu117.SenchChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SenchChat.app/SenchChat";
+			};
+			name = Release;
+		};
+		F355500B27C393FE00B28BA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WLMWR54MBP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = smu117.SenchChatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SenchChat;
+			};
+			name = Debug;
+		};
+		F355500C27C393FE00B28BA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WLMWR54MBP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = smu117.SenchChatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SenchChat;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F3554FD227C393FB00B28BA3 /* Build configuration list for PBXProject "SenchChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F355500227C393FE00B28BA3 /* Debug */,
+				F355500327C393FE00B28BA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F355500427C393FE00B28BA3 /* Build configuration list for PBXNativeTarget "SenchChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F355500527C393FE00B28BA3 /* Debug */,
+				F355500627C393FE00B28BA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F355500727C393FE00B28BA3 /* Build configuration list for PBXNativeTarget "SenchChatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F355500827C393FE00B28BA3 /* Debug */,
+				F355500927C393FE00B28BA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F355500A27C393FE00B28BA3 /* Build configuration list for PBXNativeTarget "SenchChatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F355500B27C393FE00B28BA3 /* Debug */,
+				F355500C27C393FE00B28BA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F3554FE327C393FB00B28BA3 /* SenchChat.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F3554FE427C393FB00B28BA3 /* SenchChat.xcdatamodel */,
+			);
+			currentVersion = F3554FE427C393FB00B28BA3 /* SenchChat.xcdatamodel */;
+			path = SenchChat.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F3554FCF27C393FB00B28BA3 /* Project object */;
+}
