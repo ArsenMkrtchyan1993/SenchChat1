@@ -9,14 +9,18 @@
 /* Begin PBXBuildFile section */
 		F3554FDB27C393FB00B28BA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3554FDA27C393FB00B28BA3 /* AppDelegate.swift */; };
 		F3554FDD27C393FB00B28BA3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3554FDC27C393FB00B28BA3 /* SceneDelegate.swift */; };
-		F3554FDF27C393FB00B28BA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3554FDE27C393FB00B28BA3 /* ViewController.swift */; };
-		F3554FE227C393FB00B28BA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3554FE027C393FB00B28BA3 /* Main.storyboard */; };
+		F3554FDF27C393FB00B28BA3 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3554FDE27C393FB00B28BA3 /* AuthViewController.swift */; };
 		F3554FE527C393FB00B28BA3 /* SenchChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3554FE327C393FB00B28BA3 /* SenchChat.xcdatamodeld */; };
 		F3554FE727C393FD00B28BA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3554FE627C393FD00B28BA3 /* Assets.xcassets */; };
 		F3554FEA27C393FD00B28BA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3554FE827C393FD00B28BA3 /* LaunchScreen.storyboard */; };
 		F3554FF527C393FD00B28BA3 /* SenchChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3554FF427C393FD00B28BA3 /* SenchChatTests.swift */; };
 		F3554FFF27C393FE00B28BA3 /* SenchChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3554FFE27C393FE00B28BA3 /* SenchChatUITests.swift */; };
 		F355500127C393FE00B28BA3 /* SenchChatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F355500027C393FE00B28BA3 /* SenchChatUITestsLaunchTests.swift */; };
+		F3EB986B27C4E1630013DCF6 /* UIButton + Extenion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB986A27C4E1630013DCF6 /* UIButton + Extenion.swift */; };
+		F3EB986D27C4E8F80013DCF6 /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB986C27C4E8F80013DCF6 /* UIFont + Extension.swift */; };
+		F3EB986F27C5650E0013DCF6 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB986E27C5650E0013DCF6 /* UIColor + Extension.swift */; };
+		F3EB987127C569050013DCF6 /* UILable + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB987027C569050013DCF6 /* UILable + Extension.swift */; };
+		F3EB987327C56AA60013DCF6 /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB987227C56AA60013DCF6 /* UIImageView + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +44,7 @@
 		F3554FD727C393FB00B28BA3 /* SenchChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SenchChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3554FDA27C393FB00B28BA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3554FDC27C393FB00B28BA3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F3554FDE27C393FB00B28BA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F3554FE127C393FB00B28BA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F3554FDE27C393FB00B28BA3 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		F3554FE427C393FB00B28BA3 /* SenchChat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SenchChat.xcdatamodel; sourceTree = "<group>"; };
 		F3554FE627C393FD00B28BA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3554FE927C393FD00B28BA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +54,11 @@
 		F3554FFA27C393FE00B28BA3 /* SenchChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SenchChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3554FFE27C393FE00B28BA3 /* SenchChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenchChatUITests.swift; sourceTree = "<group>"; };
 		F355500027C393FE00B28BA3 /* SenchChatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenchChatUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F3EB986A27C4E1630013DCF6 /* UIButton + Extenion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extenion.swift"; sourceTree = "<group>"; };
+		F3EB986C27C4E8F80013DCF6 /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
+		F3EB986E27C5650E0013DCF6 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
+		F3EB987027C569050013DCF6 /* UILable + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILable + Extension.swift"; sourceTree = "<group>"; };
+		F3EB987227C56AA60013DCF6 /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +111,12 @@
 			children = (
 				F3554FDA27C393FB00B28BA3 /* AppDelegate.swift */,
 				F3554FDC27C393FB00B28BA3 /* SceneDelegate.swift */,
-				F3554FDE27C393FB00B28BA3 /* ViewController.swift */,
-				F3554FE027C393FB00B28BA3 /* Main.storyboard */,
+				F3554FDE27C393FB00B28BA3 /* AuthViewController.swift */,
+				F3EB986E27C5650E0013DCF6 /* UIColor + Extension.swift */,
+				F3EB987227C56AA60013DCF6 /* UIImageView + Extension.swift */,
+				F3EB986C27C4E8F80013DCF6 /* UIFont + Extension.swift */,
+				F3EB986A27C4E1630013DCF6 /* UIButton + Extenion.swift */,
+				F3EB987027C569050013DCF6 /* UILable + Extension.swift */,
 				F3554FE627C393FD00B28BA3 /* Assets.xcassets */,
 				F3554FE827C393FD00B28BA3 /* LaunchScreen.storyboard */,
 				F3554FEB27C393FD00B28BA3 /* Info.plist */,
@@ -236,7 +248,6 @@
 			files = (
 				F3554FEA27C393FD00B28BA3 /* LaunchScreen.storyboard in Resources */,
 				F3554FE727C393FD00B28BA3 /* Assets.xcassets in Resources */,
-				F3554FE227C393FB00B28BA3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,8 +272,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3554FDF27C393FB00B28BA3 /* ViewController.swift in Sources */,
+				F3EB987327C56AA60013DCF6 /* UIImageView + Extension.swift in Sources */,
+				F3EB986F27C5650E0013DCF6 /* UIColor + Extension.swift in Sources */,
+				F3EB986D27C4E8F80013DCF6 /* UIFont + Extension.swift in Sources */,
+				F3EB987127C569050013DCF6 /* UILable + Extension.swift in Sources */,
+				F3554FDF27C393FB00B28BA3 /* AuthViewController.swift in Sources */,
 				F3554FDB27C393FB00B28BA3 /* AppDelegate.swift in Sources */,
+				F3EB986B27C4E1630013DCF6 /* UIButton + Extenion.swift in Sources */,
 				F3554FDD27C393FB00B28BA3 /* SceneDelegate.swift in Sources */,
 				F3554FE527C393FB00B28BA3 /* SenchChat.xcdatamodeld in Sources */,
 			);
@@ -301,14 +317,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F3554FE027C393FB00B28BA3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F3554FE127C393FB00B28BA3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F3554FE827C393FD00B28BA3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -448,7 +456,6 @@
 				INFOPLIST_FILE = SenchChat/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -476,7 +483,6 @@
 				INFOPLIST_FILE = SenchChat/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
