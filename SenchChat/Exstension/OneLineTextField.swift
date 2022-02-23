@@ -10,9 +10,9 @@ import UIKit
 
 class OneLineTextField: UITextField {
     
-    
-    convenience init (font: UIFont? = .avenir20()) {
+    convenience init(font: UIFont? = .avenir20()) {
         self.init()
+        
         self.font = font
         self.borderStyle = .none
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -22,6 +22,7 @@ class OneLineTextField: UITextField {
         bottomView.backgroundColor = .textFiledLight
         bottomView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(bottomView)
+        
         NSLayoutConstraint.activate([
             bottomView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             bottomView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
