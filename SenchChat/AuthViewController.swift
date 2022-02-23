@@ -27,7 +27,11 @@ class AuthViewController: UIViewController {
         view.backgroundColor = .white
         setupConstraints()
     }
+}
 
+// MARK: - Setup constraints
+
+extension AuthViewController {
     
     
     private func setupConstraints() {
@@ -58,7 +62,6 @@ class AuthViewController: UIViewController {
         ])
     }
 }
-
 
 // MARK: - SwiftUI
 

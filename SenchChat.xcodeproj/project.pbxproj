@@ -22,6 +22,9 @@
 		F3EB987127C569050013DCF6 /* UILable + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB987027C569050013DCF6 /* UILable + Extension.swift */; };
 		F3EB987327C56AA60013DCF6 /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB987227C56AA60013DCF6 /* UIImageView + Extension.swift */; };
 		F3EB987827C647CE0013DCF6 /* ButtonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB987727C647CD0013DCF6 /* ButtonFormView.swift */; };
+		F3EB987A27C6747D0013DCF6 /* SingUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB987927C6747D0013DCF6 /* SingUpViewController.swift */; };
+		F3EB987C27C67A0F0013DCF6 /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB987B27C67A0F0013DCF6 /* OneLineTextField.swift */; };
+		F3EB987E27C67F050013DCF6 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB987D27C67F050013DCF6 /* UIStackView + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		F3EB987027C569050013DCF6 /* UILable + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILable + Extension.swift"; sourceTree = "<group>"; };
 		F3EB987227C56AA60013DCF6 /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
 		F3EB987727C647CD0013DCF6 /* ButtonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormView.swift; sourceTree = "<group>"; };
+		F3EB987927C6747D0013DCF6 /* SingUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewController.swift; sourceTree = "<group>"; };
+		F3EB987B27C67A0F0013DCF6 /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
+		F3EB987D27C67F050013DCF6 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +120,7 @@
 				F3554FDA27C393FB00B28BA3 /* AppDelegate.swift */,
 				F3554FDC27C393FB00B28BA3 /* SceneDelegate.swift */,
 				F3554FDE27C393FB00B28BA3 /* AuthViewController.swift */,
-				F3EB987727C647CD0013DCF6 /* ButtonFormView.swift */,
+				F3EB987927C6747D0013DCF6 /* SingUpViewController.swift */,
 				F3EB987627C6458B0013DCF6 /* Exstension */,
 				F3554FE627C393FD00B28BA3 /* Assets.xcassets */,
 				F3554FE827C393FD00B28BA3 /* LaunchScreen.storyboard */,
@@ -147,6 +153,7 @@
 				F3EB986E27C5650E0013DCF6 /* UIColor + Extension.swift */,
 				F3EB987227C56AA60013DCF6 /* UIImageView + Extension.swift */,
 				F3EB986C27C4E8F80013DCF6 /* UIFont + Extension.swift */,
+				F3EB987D27C67F050013DCF6 /* UIStackView + Extension.swift */,
 				F3EB986A27C4E1630013DCF6 /* UIButton + Extenion.swift */,
 				F3EB987027C569050013DCF6 /* UILable + Extension.swift */,
 			);
@@ -156,6 +163,8 @@
 		F3EB987627C6458B0013DCF6 /* Exstension */ = {
 			isa = PBXGroup;
 			children = (
+				F3EB987B27C67A0F0013DCF6 /* OneLineTextField.swift */,
+				F3EB987727C647CD0013DCF6 /* ButtonFormView.swift */,
 				F3EB987427C645660013DCF6 /* UIKit */,
 			);
 			path = Exstension;
@@ -291,7 +300,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3EB987C27C67A0F0013DCF6 /* OneLineTextField.swift in Sources */,
 				F3EB987327C56AA60013DCF6 /* UIImageView + Extension.swift in Sources */,
+				F3EB987E27C67F050013DCF6 /* UIStackView + Extension.swift in Sources */,
 				F3EB986F27C5650E0013DCF6 /* UIColor + Extension.swift in Sources */,
 				F3EB986D27C4E8F80013DCF6 /* UIFont + Extension.swift in Sources */,
 				F3EB987127C569050013DCF6 /* UILable + Extension.swift in Sources */,
@@ -300,6 +311,7 @@
 				F3EB987827C647CE0013DCF6 /* ButtonFormView.swift in Sources */,
 				F3EB986B27C4E1630013DCF6 /* UIButton + Extenion.swift in Sources */,
 				F3554FDD27C393FB00B28BA3 /* SceneDelegate.swift in Sources */,
+				F3EB987A27C6747D0013DCF6 /* SingUpViewController.swift in Sources */,
 				F3554FE527C393FB00B28BA3 /* SenchChat.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
