@@ -99,7 +99,6 @@ import SwiftUI
 struct SingUpVCProvider: PreviewProvider {
     static var previews: some View {
         Group {
-            ContainerView().edgesIgnoringSafeArea(.all)
             ContainerView().edgesIgnoringSafeArea(.all).previewInterfaceOrientation(.portrait)
         }
     }

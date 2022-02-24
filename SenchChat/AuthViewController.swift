@@ -17,6 +17,7 @@ class AuthViewController: UIViewController {
     
     
     let googleButton = UIButton(title: "Google", titleColor: .black, backgroundColor: .white,  isShadow: true)
+   // let phoneButton = UIButton(title: "Phone", titleColor: .white, backgroundColor: .green, isShadow: true)
     let emailButton = UIButton(title: "Email", titleColor: .white, backgroundColor: .buttonDark(), isShadow: false)
     let loginButton = UIButton(title: "Login", titleColor: .buttonRed(), backgroundColor: .white, isShadow: true)
     
@@ -26,6 +27,7 @@ class AuthViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupConstraints()
+        googleButton.customizeGoogleButton()
     }
 }
 

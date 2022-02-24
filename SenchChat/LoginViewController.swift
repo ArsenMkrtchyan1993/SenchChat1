@@ -35,6 +35,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupConstraints()
+        googleButton.customizeGoogleButton()
     }
 }
 
@@ -104,7 +105,6 @@ import SwiftUI
 struct LoginVCProvider: PreviewProvider {
     static var previews: some View {
         Group {
-            ContainerView().edgesIgnoringSafeArea(.all)
             ContainerView().edgesIgnoringSafeArea(.all).previewInterfaceOrientation(.portrait)
         }
     }
