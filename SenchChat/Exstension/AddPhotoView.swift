@@ -11,7 +11,7 @@ class AddPhotoView: UIView {
     var circleImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .top
+        imageView.contentMode = .center
         imageView.image = #imageLiteral(resourceName: "avatar")
         imageView.clipsToBounds = true
         imageView.layer.borderColor = UIColor.black.cgColor

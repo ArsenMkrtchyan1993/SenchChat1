@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F3436C8527C6A98E004A65C3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3436C8427C6A98E004A65C3 /* LoginViewController.swift */; };
+		F349A87827C8D50A0028260D /* SegmentedControl + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F349A87727C8D5090028260D /* SegmentedControl + Extension.swift */; };
 		F3554FDB27C393FB00B28BA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3554FDA27C393FB00B28BA3 /* AppDelegate.swift */; };
 		F3554FDD27C393FB00B28BA3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3554FDC27C393FB00B28BA3 /* SceneDelegate.swift */; };
 		F3554FDF27C393FB00B28BA3 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3554FDE27C393FB00B28BA3 /* AuthViewController.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		F3436C8427C6A98E004A65C3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F349A87727C8D5090028260D /* SegmentedControl + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentedControl + Extension.swift"; sourceTree = "<group>"; };
 		F3554FD727C393FB00B28BA3 /* SenchChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SenchChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3554FDA27C393FB00B28BA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3554FDC27C393FB00B28BA3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			children = (
 				F3EB986E27C5650E0013DCF6 /* UIColor + Extension.swift */,
 				F3EB987227C56AA60013DCF6 /* UIImageView + Extension.swift */,
+				F349A87727C8D5090028260D /* SegmentedControl + Extension.swift */,
 				F3EB986C27C4E8F80013DCF6 /* UIFont + Extension.swift */,
 				F3EB987D27C67F050013DCF6 /* UIStackView + Extension.swift */,
 				F3EB986A27C4E1630013DCF6 /* UIButton + Extenion.swift */,
@@ -325,6 +328,7 @@
 				F3554FDD27C393FB00B28BA3 /* SceneDelegate.swift in Sources */,
 				F3EB987A27C6747D0013DCF6 /* SingUpViewController.swift in Sources */,
 				F3554FE527C393FB00B28BA3 /* SenchChat.xcdatamodeld in Sources */,
+				F349A87827C8D50A0028260D /* SegmentedControl + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

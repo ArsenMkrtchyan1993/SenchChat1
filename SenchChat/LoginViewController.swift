@@ -53,6 +53,7 @@ extension LoginViewController {
         let emailStackView = UIStackView(arrangedSubviews: [emailLabel,emailTextField],axis: .vertical,spacing: 0)
         let passwordStackView = UIStackView(arrangedSubviews: [passwordLabel,passwordTextField],axis: .vertical,spacing: 0)
         loginButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        
         let stackView = UIStackView(arrangedSubviews: [
                                         googleButton,
                                         orLabel,
@@ -60,6 +61,7 @@ extension LoginViewController {
                                         passwordStackView,
                                         loginButton
         ], axis: .vertical, spacing: 40)
+        
         singUpButton.contentHorizontalAlignment = .leading
 
         let bottomStackView = UIStackView(arrangedSubviews: [needAnAccountLabel, singUpButton], axis: .horizontal, spacing: 10)
