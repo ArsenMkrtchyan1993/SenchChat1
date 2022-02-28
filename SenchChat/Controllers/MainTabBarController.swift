@@ -22,19 +22,19 @@ class MainTabBarController: UITabBarController {
             appearance.configureWithOpaqueBackground()
         if self.traitCollection.userInterfaceStyle == .dark {
             appearance.backgroundColor = .black
-        }
-            else {
+        }else {
                 appearance.backgroundColor = .white
-            }
-        
-           
-            tabBar.standardAppearance = appearance
-            tabBar.scrollEdgeAppearance = tabBar.standardAppearance
-        //tabBar.backgroundColor = #colorLiteral(red: 0.8745563626, green: 0.8744391799, blue: 0.8788207769, alpha: 1)
+             }
+        tabBar.standardAppearance = appearance
+        tabBar.scrollEdgeAppearance = tabBar.standardAppearance
         tabBar.tintColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
         viewControllers = [ generateNavigationController(rootViewController: listVC, title: "Conversations", image: peopleImage!),
                             generateNavigationController(rootViewController: peopleVC, title: "People", image: convImage!)
         ]
+        
+        
+        
+        
     }
     private func generateNavigationController(rootViewController:UIViewController,
                                               title: String,
