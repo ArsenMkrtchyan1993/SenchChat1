@@ -7,14 +7,43 @@
 
 import UIKit
 
+struct MChat:Hashable {
+    
+    var userName:String
+    var UserImage:UIImage
+    var lastMessage:String
+    var id = UUID()
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    static func == (lhs: MChat, rhs: MChat) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
+
 
 class ListViewController: UIViewController {
     var collectionView: UICollectionView!
+    var dataSource:UICollectionViewDiffableDataSource<Section,MChat>?
+    let activeChat:[MChat] = [
+            MChat(userName: "harut", UserImage: UIImage(named: "human1")!, lastMessage: "hello "),
+            MChat(userName: "Popxos", UserImage: UIImage(named: "human2")!, lastMessage: "hello "),
+            MChat(userName: "armine", UserImage: UIImage(named: "human3")!, lastMessage: "hello "),
+            MChat(userName: "arpine", UserImage: UIImage(named: "human5")!, lastMessage: "hello ")
+    ]
+    
+    enum Section: Int, CaseIterable {
+        case activeChats
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
         setupSearchBar()
+        createDataSource()
+        reloadData()
+        
     }
     
     private func setupSearchBar() {
@@ -29,16 +58,55 @@ class ListViewController: UIViewController {
         
     }
     
-    private func setupCollectionView()  {
-        collectionView = UICollectionView (frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout())
-        collectionView.autoresizingMask = [.flexibleWidth,.flexibleHeight]
+    private func setupCollectionView() {
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.backgroundColor = .mainWhite()
         view.addSubview(collectionView)
+        
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellid")
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
+    }
+    
+    private func createDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<Section,MChat>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, chat) -> UICollectionViewCell? in
+            guard let section = Section(rawValue: indexPath.section) else {
+                fatalError("section noe found")
+            }
+                switch section {
+                case .activeChats:
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid", for: indexPath)
+                    cell.backgroundColor = .black
+                    return cell
+                }
+        })
         
+    }
+    private func reloadData() {
+        var snapshot = NSDiffableDataSourceSnapshot<Section,MChat>()
+        snapshot.appendSections([.activeChats])
+        snapshot.appendItems(activeChat, toSection: .activeChats)
+        dataSource?.apply(snapshot,animatingDifferences: true)
+        
+        
+    }
+    private func createCompositionalLayout() -> UICollectionViewLayout {
+        let layout = UICollectionViewCompositionalLayout { (senctionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
+            
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                  heightDimension: .fractionalHeight(1))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                   heightDimension: .absolute(84))
+            let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+            group.contentInsets = NSDirectionalEdgeInsets.init(top: 0, leading: 0, bottom: 8, trailing: 0)
+            
+            let section = NSCollectionLayoutSection(group: group)
+            section.contentInsets = NSDirectionalEdgeInsets.init(top: 16, leading: 20, bottom: 0, trailing: 20)
+            return section
+        }
+        return layout
     }
 }
 
@@ -49,21 +117,6 @@ extension ListViewController: UISearchBarDelegate {
         print(searchText)
     }
 }
-
-// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
-
-extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid", for: indexPath)
-        cell.backgroundColor = .red
-        return cell
-    }
-}
-
 
 
 // MARK: - SwiftUI
