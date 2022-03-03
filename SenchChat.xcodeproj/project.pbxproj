@@ -18,6 +18,9 @@
 		F3554FF527C393FD00B28BA3 /* SenchChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3554FF427C393FD00B28BA3 /* SenchChatTests.swift */; };
 		F3554FFF27C393FE00B28BA3 /* SenchChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3554FFE27C393FE00B28BA3 /* SenchChatUITests.swift */; };
 		F355500127C393FE00B28BA3 /* SenchChatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F355500027C393FE00B28BA3 /* SenchChatUITestsLaunchTests.swift */; };
+		F3AD057A27CFFCEA00FDF0A1 /* Bundle - extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AD057927CFFCEA00FDF0A1 /* Bundle - extension.swift */; };
+		F3AD057D27D005F500FDF0A1 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = F3AD057B27D005F500FDF0A1 /* activeChats.json */; };
+		F3AD057E27D005F500FDF0A1 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = F3AD057C27D005F500FDF0A1 /* waitingChats.json */; };
 		F3B59F7627C77FDB009D7F96 /* SetupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B59F7527C77FDB009D7F96 /* SetupProfileViewController.swift */; };
 		F3B59F7827C78A88009D7F96 /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B59F7727C78A88009D7F96 /* AddPhotoView.swift */; };
 		F3CC4A3C27C93056002CD8A0 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CC4A3B27C93056002CD8A0 /* MainTabBarController.swift */; };
@@ -67,6 +70,9 @@
 		F3554FFA27C393FE00B28BA3 /* SenchChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SenchChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3554FFE27C393FE00B28BA3 /* SenchChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenchChatUITests.swift; sourceTree = "<group>"; };
 		F355500027C393FE00B28BA3 /* SenchChatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenchChatUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F3AD057927CFFCEA00FDF0A1 /* Bundle - extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle - extension.swift"; sourceTree = "<group>"; };
+		F3AD057B27D005F500FDF0A1 /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = activeChats.json; path = "../../../../mp3/[SwiftBook] Программирование на Swift/28. Курс По Мессенджеру IChat/17. Cell GradientView/17. урок/IChat/Extensions/UIKIt/activeChats.json"; sourceTree = "<group>"; };
+		F3AD057C27D005F500FDF0A1 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = waitingChats.json; path = "../../../../mp3/[SwiftBook] Программирование на Swift/28. Курс По Мессенджеру IChat/17. Cell GradientView/17. урок/IChat/Extensions/UIKIt/waitingChats.json"; sourceTree = "<group>"; };
 		F3B59F7527C77FDB009D7F96 /* SetupProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewController.swift; sourceTree = "<group>"; };
 		F3B59F7727C78A88009D7F96 /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
 		F3CC4A3B27C93056002CD8A0 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -185,6 +191,8 @@
 		F3EB987427C645660013DCF6 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				F3AD057B27D005F500FDF0A1 /* activeChats.json */,
+				F3AD057C27D005F500FDF0A1 /* waitingChats.json */,
 				F3EB986E27C5650E0013DCF6 /* UIColor + Extension.swift */,
 				F3EB987227C56AA60013DCF6 /* UIImageView + Extension.swift */,
 				F349A87727C8D5090028260D /* SegmentedControl + Extension.swift */,
@@ -202,6 +210,7 @@
 				F3EB987B27C67A0F0013DCF6 /* OneLineTextField.swift */,
 				F3EB987727C647CD0013DCF6 /* ButtonFormView.swift */,
 				F3B59F7727C78A88009D7F96 /* AddPhotoView.swift */,
+				F3AD057927CFFCEA00FDF0A1 /* Bundle - extension.swift */,
 				F3EB987427C645660013DCF6 /* UIKit */,
 			);
 			path = Exstension;
@@ -312,7 +321,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3554FEA27C393FD00B28BA3 /* LaunchScreen.storyboard in Resources */,
+				F3AD057D27D005F500FDF0A1 /* activeChats.json in Resources */,
 				F3554FE727C393FD00B28BA3 /* Assets.xcassets in Resources */,
+				F3AD057E27D005F500FDF0A1 /* waitingChats.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3AD057A27CFFCEA00FDF0A1 /* Bundle - extension.swift in Sources */,
 				F3436C8527C6A98E004A65C3 /* LoginViewController.swift in Sources */,
 				F3EB987C27C67A0F0013DCF6 /* OneLineTextField.swift in Sources */,
 				F3EB987327C56AA60013DCF6 /* UIImageView + Extension.swift in Sources */,
