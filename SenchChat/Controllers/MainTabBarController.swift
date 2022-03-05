@@ -28,8 +28,9 @@ class MainTabBarController: UITabBarController {
         tabBar.standardAppearance = appearance
         tabBar.scrollEdgeAppearance = tabBar.standardAppearance
         tabBar.tintColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
-        viewControllers = [ generateNavigationController(rootViewController: listVC, title: "Conversations", image: peopleImage!),
-                            generateNavigationController(rootViewController: peopleVC, title: "People", image: convImage!)
+        viewControllers = [ generateNavigationController(rootViewController: peopleVC, title: "People", image: convImage!),
+                            generateNavigationController(rootViewController: listVC, title: "Conversations", image: peopleImage!)
+                            
         ]
         
         
