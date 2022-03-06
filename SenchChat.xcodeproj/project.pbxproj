@@ -19,6 +19,8 @@
 		F3554FFF27C393FE00B28BA3 /* SenchChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3554FFE27C393FE00B28BA3 /* SenchChatUITests.swift */; };
 		F355500127C393FE00B28BA3 /* SenchChatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F355500027C393FE00B28BA3 /* SenchChatUITestsLaunchTests.swift */; };
 		F363CEF727D4F66000DB6473 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F363CEF627D4F66000DB6473 /* ProfileViewController.swift */; };
+		F363CEF927D507E400DB6473 /* InsertableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F363CEF827D507E400DB6473 /* InsertableTextField.swift */; };
+		F363CEFB27D511F500DB6473 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F363CEFA27D511F400DB6473 /* UIView + Extension.swift */; };
 		F39BF7CC27D23B6C005A9FB7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BF7CB27D23B6C005A9FB7 /* GradientView.swift */; };
 		F39BF7CE27D24317005A9FB7 /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BF7CD27D24317005A9FB7 /* WaitingChatCell.swift */; };
 		F39BF7D027D2489B005A9FB7 /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BF7CF27D2489B005A9FB7 /* SelfConfiguringCell.swift */; };
@@ -82,6 +84,8 @@
 		F3554FFE27C393FE00B28BA3 /* SenchChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenchChatUITests.swift; sourceTree = "<group>"; };
 		F355500027C393FE00B28BA3 /* SenchChatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenchChatUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F363CEF627D4F66000DB6473 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F363CEF827D507E400DB6473 /* InsertableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertableTextField.swift; sourceTree = "<group>"; };
+		F363CEFA27D511F400DB6473 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		F39BF7CB27D23B6C005A9FB7 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		F39BF7CD27D24317005A9FB7 /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
 		F39BF7CF27D2489B005A9FB7 /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
@@ -258,6 +262,7 @@
 				F3AD057C27D005F500FDF0A1 /* waitingChats.json */,
 				F3EB986E27C5650E0013DCF6 /* UIColor + Extension.swift */,
 				F3E0542727D3EA4600F2346E /* UIViewController + Extension.swift */,
+				F363CEFA27D511F400DB6473 /* UIView + Extension.swift */,
 				F3EB987227C56AA60013DCF6 /* UIImageView + Extension.swift */,
 				F349A87727C8D5090028260D /* SegmentedControl + Extension.swift */,
 				F3EB986C27C4E8F80013DCF6 /* UIFont + Extension.swift */,
@@ -272,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				F3EB987B27C67A0F0013DCF6 /* OneLineTextField.swift */,
+				F363CEF827D507E400DB6473 /* InsertableTextField.swift */,
 				F3EB987727C647CD0013DCF6 /* ButtonFormView.swift */,
 				F3B59F7727C78A88009D7F96 /* AddPhotoView.swift */,
 				F3AD057927CFFCEA00FDF0A1 /* Bundle - extension.swift */,
@@ -420,6 +426,7 @@
 				F3436C8527C6A98E004A65C3 /* LoginViewController.swift in Sources */,
 				F3EB987C27C67A0F0013DCF6 /* OneLineTextField.swift in Sources */,
 				F3EB987327C56AA60013DCF6 /* UIImageView + Extension.swift in Sources */,
+				F363CEF927D507E400DB6473 /* InsertableTextField.swift in Sources */,
 				F3B59F7627C77FDB009D7F96 /* SetupProfileViewController.swift in Sources */,
 				F3EB987E27C67F050013DCF6 /* UIStackView + Extension.swift in Sources */,
 				F3E0542827D3EA4600F2346E /* UIViewController + Extension.swift in Sources */,
@@ -439,6 +446,7 @@
 				F3554FDD27C393FB00B28BA3 /* SceneDelegate.swift in Sources */,
 				F3CC4A3C27C93056002CD8A0 /* MainTabBarController.swift in Sources */,
 				F39BF7CE27D24317005A9FB7 /* WaitingChatCell.swift in Sources */,
+				F363CEFB27D511F500DB6473 /* UIView + Extension.swift in Sources */,
 				F3EB987A27C6747D0013DCF6 /* SingUpViewController.swift in Sources */,
 				F3E0542127D39A4200F2346E /* MUser.swift in Sources */,
 				F3BDAC5127D10806008F977B /* ActiveChatCell.swift in Sources */,

@@ -11,9 +11,9 @@ import UIKit
 class ProfileViewController: UIViewController {
     let containerView = UIView()
     let imageView = UIImageView(image: #imageLiteral(resourceName: "human6"), contentMode: .scaleAspectFill)
-    let nameLabel = UILabel(title: "Arsen mkrtchyan", font: .systemFont(ofSize: 20,weight: .light))
+    let nameLabel = UILabel(title: "Anahit Grigoryan", font: .systemFont(ofSize: 20,weight: .light))
     let aboutMyLabel = UILabel(title: "Shat urax klines canotanalu im het", font: .systemFont(ofSize: 16, weight: .light))
-    let myTextField = UITextField()
+    let myTextField = InsertableTextField()
     
     
     
@@ -21,33 +21,46 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .mainWhite()
         setupConstraints()
+        constomiseElements()
     }
     
-    
-    
-    
-}
-
-extension ProfileViewController {
-    
-    private func setupConstraints() {
+    private func constomiseElements() {
+        
         containerView.translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         aboutMyLabel.translatesAutoresizingMaskIntoConstraints = false
         myTextField.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(imageView)
-        
-        
         aboutMyLabel.numberOfLines = 0
-        containerView.backgroundColor = .red
+        containerView.backgroundColor = .mainWhite()
         //containerView.clipsToBounds = true
         containerView.layer.cornerRadius = 30
         
+        if  let button = myTextField.rightView as? UIButton {
+            button.addTarget(self, action:#selector(sendMessage), for: .touchUpInside)
+        }
+        
+        
+    }
+    
+    @objc private func sendMessage() {
+        print(#function)
+    }
+}
+    
+
+
+
+
+
+extension ProfileViewController {
+    
+    private func setupConstraints() {
+        
+        view.addSubview(imageView)
         containerView.addSubview(nameLabel)
         containerView.addSubview(aboutMyLabel)
         containerView.addSubview(myTextField)
-        myTextField.borderStyle = .roundedRect
         view.addSubview(containerView)
         
         NSLayoutConstraint.activate([
