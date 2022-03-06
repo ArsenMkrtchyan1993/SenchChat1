@@ -18,6 +18,7 @@
 		F3554FF527C393FD00B28BA3 /* SenchChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3554FF427C393FD00B28BA3 /* SenchChatTests.swift */; };
 		F3554FFF27C393FE00B28BA3 /* SenchChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3554FFE27C393FE00B28BA3 /* SenchChatUITests.swift */; };
 		F355500127C393FE00B28BA3 /* SenchChatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F355500027C393FE00B28BA3 /* SenchChatUITestsLaunchTests.swift */; };
+		F363CEF727D4F66000DB6473 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F363CEF627D4F66000DB6473 /* ProfileViewController.swift */; };
 		F39BF7CC27D23B6C005A9FB7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BF7CB27D23B6C005A9FB7 /* GradientView.swift */; };
 		F39BF7CE27D24317005A9FB7 /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BF7CD27D24317005A9FB7 /* WaitingChatCell.swift */; };
 		F39BF7D027D2489B005A9FB7 /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BF7CF27D2489B005A9FB7 /* SelfConfiguringCell.swift */; };
@@ -80,6 +81,7 @@
 		F3554FFA27C393FE00B28BA3 /* SenchChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SenchChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3554FFE27C393FE00B28BA3 /* SenchChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenchChatUITests.swift; sourceTree = "<group>"; };
 		F355500027C393FE00B28BA3 /* SenchChatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenchChatUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F363CEF627D4F66000DB6473 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F39BF7CB27D23B6C005A9FB7 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		F39BF7CD27D24317005A9FB7 /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
 		F39BF7CF27D2489B005A9FB7 /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				F3CC4A3B27C93056002CD8A0 /* MainTabBarController.swift */,
 				F3CC4A3D27C93127002CD8A0 /* ListViewController.swift */,
 				F3CC4A3F27C9316E002CD8A0 /* PeopleViewController.swift */,
+				F363CEF627D4F66000DB6473 /* ProfileViewController.swift */,
 				F3E0541C27D292E800F2346E /* Header */,
 				F3BDAC4F27D107EB008F977B /* Cell */,
 			);
@@ -423,6 +426,7 @@
 				F3CC4A4027C9316E002CD8A0 /* PeopleViewController.swift in Sources */,
 				F3EB986F27C5650E0013DCF6 /* UIColor + Extension.swift in Sources */,
 				F3EB986D27C4E8F80013DCF6 /* UIFont + Extension.swift in Sources */,
+				F363CEF727D4F66000DB6473 /* ProfileViewController.swift in Sources */,
 				F3EB987127C569050013DCF6 /* UILable + Extension.swift in Sources */,
 				F39BF7D327D24D1B005A9FB7 /* SectionHeader.swift in Sources */,
 				F3CC4A3E27C93127002CD8A0 /* ListViewController.swift in Sources */,

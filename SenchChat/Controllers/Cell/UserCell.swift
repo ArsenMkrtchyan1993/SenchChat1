@@ -37,6 +37,9 @@ class UserCell: UICollectionViewCell,SelfConfiguringCell {
         self.containerView.layer.cornerRadius = 4
         self.containerView.clipsToBounds = true
     }
+    
+    
+    
      func configure<U>(whit value: U) where U : Hashable {
          guard let user: MUser  = value as? MUser else { return }
          userName.text = user.username

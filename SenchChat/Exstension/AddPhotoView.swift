@@ -8,6 +8,8 @@
 import UIKit
 
 class AddPhotoView: UIView {
+    
+    
     var circleImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
