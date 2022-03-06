@@ -20,7 +20,7 @@ class PeopleViewController: UIViewController {
         func description(usersCount: Int) -> String {
             switch self {
             case .user:
-                return "\(usersCount) People nearbly"
+                return "\(usersCount) People nearby"
             }
         }
     }
@@ -28,7 +28,6 @@ class PeopleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchBar()
-        view.backgroundColor = .green
         setupCollectionView()
         createDataSource()
         reloadData()
