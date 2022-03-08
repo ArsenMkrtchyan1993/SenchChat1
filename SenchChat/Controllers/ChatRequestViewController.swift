@@ -1,64 +1,63 @@
 //
-//  ProfileViewController.swift
+//  ChatRequestViewController.swift
 //  SenchChat
 //
-//  Created by Arsen Mkrtchyan on 06.03.22.
+//  Created by Arsen Mkrtchyan on 08.03.22.
 //
 
 import UIKit
 
 
-class ProfileViewController: UIViewController {
+class ChatRequestViewController: UIViewController {
     let containerView = UIView()
     let imageView = UIImageView(image: #imageLiteral(resourceName: "human6"), contentMode: .scaleAspectFill)
     let nameLabel = UILabel(title: "Anahit Grigoryan", font: .systemFont(ofSize: 20,weight: .light))
-    let aboutMyLabel = UILabel(title: "Shat urax klines canotanalu im het", font: .systemFont(ofSize: 16, weight: .light))
-    let myTextField = InsertableTextField()
+    let aboutMyLabel = UILabel(title: "Have you the opportunity to start a new chat", font: .systemFont(ofSize: 16, weight: .light))
+    let acceptButton = UIButton(title: "ACCEPT", titleColor: .white, backgroundColor: .black, font: .laoSangamMN20(), isShadow: false, cornerRadius: 10)
+    let danyButton = UIButton(title: "Dany", titleColor:#colorLiteral(red: 0.8156862745, green: 0.007843137255, blue: 0.1058823529, alpha: 1), backgroundColor: .mainWhite(), font: .laoSangamMN20(), isShadow: false, cornerRadius: 10)
+     
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .mainWhite()
-        setupConstraints()
+        view.backgroundColor = .red
         customizeElements()
+        setupConstraints()
+        
     }
-    
     private func customizeElements() {
         containerView.translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         aboutMyLabel.translatesAutoresizingMaskIntoConstraints = false
-        myTextField.translatesAutoresizingMaskIntoConstraints = false
         aboutMyLabel.numberOfLines = 0
         containerView.backgroundColor = .mainWhite()
         //containerView.clipsToBounds = true
         containerView.layer.cornerRadius = 30
+        danyButton.layer.borderWidth = 1.2
+        danyButton.layer.borderColor = #colorLiteral(red: 0.8156862745, green: 0.007843137255, blue: 0.1058823529, alpha: 1)
         
-        if  let button = myTextField.rightView as? UIButton {
-            button.addTarget(self, action:#selector(sendMessage), for: .touchUpInside)
-        }
-        
+             
     }
-    
-    @objc private func sendMessage() {
-        print(#function)
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.acceptButton.applyGradients(cornerRadius: 10)
     }
 }
-    
 
 
-
-
-
-extension ProfileViewController {
+extension ChatRequestViewController {
     
     private func setupConstraints() {
         
         view.addSubview(imageView)
         containerView.addSubview(nameLabel)
         containerView.addSubview(aboutMyLabel)
-        containerView.addSubview(myTextField)
+        let buttonStackView = UIStackView(arrangedSubviews: [acceptButton,danyButton], axis: .horizontal, spacing: 7)
+        buttonStackView.translatesAutoresizingMaskIntoConstraints = false
+        buttonStackView.distribution = .fillEqually
+        containerView.addSubview(buttonStackView)
         view.addSubview(containerView)
         
         NSLayoutConstraint.activate([
@@ -87,12 +86,14 @@ extension ProfileViewController {
             aboutMyLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -24)
         ])
         NSLayoutConstraint.activate([
-            myTextField.topAnchor.constraint(equalTo: aboutMyLabel.bottomAnchor,constant: 10),
-            myTextField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor,constant: 24),
-            myTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -24),
-            myTextField.heightAnchor.constraint(equalToConstant: 48)
+            buttonStackView.topAnchor.constraint(equalTo: aboutMyLabel.bottomAnchor,constant: 24),
+            buttonStackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor,constant: 24),
+            buttonStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -24),
+            buttonStackView.heightAnchor.constraint(equalToConstant: 56)
         ])
     }
+    
+    
     
 }
 // MARK: - SwiftUI
@@ -100,20 +101,20 @@ extension ProfileViewController {
 
 import SwiftUI
 
-struct ProfileVCProvider: PreviewProvider {
+struct ChatRequestProvider: PreviewProvider {
     static var previews: some View {
         ContainerView().edgesIgnoringSafeArea(.all)
     }
     
     struct ContainerView: UIViewControllerRepresentable {
         
-        let ProfileVC = ProfileViewController()
+        let ChatRequestVC = ChatRequestViewController()
         
-        func makeUIViewController(context: UIViewControllerRepresentableContext<ProfileVCProvider.ContainerView>) -> ProfileViewController {
-            return ProfileVC
+        func makeUIViewController(context: UIViewControllerRepresentableContext<ChatRequestProvider.ContainerView>) -> ChatRequestViewController {
+            return ChatRequestVC
         }
         
-        func updateUIViewController(_ uiViewController: ProfileVCProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<ProfileVCProvider.ContainerView>) {
+        func updateUIViewController(_ uiViewController: ChatRequestProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<ChatRequestProvider.ContainerView>) {
             
         }
     }

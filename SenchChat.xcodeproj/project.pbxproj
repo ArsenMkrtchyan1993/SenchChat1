@@ -48,6 +48,7 @@
 		F3EB987A27C6747D0013DCF6 /* SingUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB987927C6747D0013DCF6 /* SingUpViewController.swift */; };
 		F3EB987C27C67A0F0013DCF6 /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB987B27C67A0F0013DCF6 /* OneLineTextField.swift */; };
 		F3EB987E27C67F050013DCF6 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB987D27C67F050013DCF6 /* UIStackView + Extension.swift */; };
+		F3FC436627D766ED0079936E /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FC436527D766ED0079936E /* ChatRequestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		F3EB987927C6747D0013DCF6 /* SingUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewController.swift; sourceTree = "<group>"; };
 		F3EB987B27C67A0F0013DCF6 /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
 		F3EB987D27C67F050013DCF6 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
+		F3FC436527D766ED0079936E /* ChatRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +233,7 @@
 				F3CC4A3D27C93127002CD8A0 /* ListViewController.swift */,
 				F3CC4A3F27C9316E002CD8A0 /* PeopleViewController.swift */,
 				F363CEF627D4F66000DB6473 /* ProfileViewController.swift */,
+				F3FC436527D766ED0079936E /* ChatRequestViewController.swift */,
 				F3E0541C27D292E800F2346E /* Header */,
 				F3BDAC4F27D107EB008F977B /* Cell */,
 			);
@@ -446,6 +449,7 @@
 				F3554FDD27C393FB00B28BA3 /* SceneDelegate.swift in Sources */,
 				F3CC4A3C27C93056002CD8A0 /* MainTabBarController.swift in Sources */,
 				F39BF7CE27D24317005A9FB7 /* WaitingChatCell.swift in Sources */,
+				F3FC436627D766ED0079936E /* ChatRequestViewController.swift in Sources */,
 				F363CEFB27D511F500DB6473 /* UIView + Extension.swift in Sources */,
 				F3EB987A27C6747D0013DCF6 /* SingUpViewController.swift in Sources */,
 				F3E0542127D39A4200F2346E /* MUser.swift in Sources */,
