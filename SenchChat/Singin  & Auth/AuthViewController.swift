@@ -17,7 +17,7 @@ class AuthViewController: UIViewController {
     
     
     let googleButton = UIButton(title: "Google", titleColor: .black, backgroundColor: .white,  isShadow: true)
-   // let phoneButton = UIButton(title: "Phone", titleColor: .white, backgroundColor: .green, isShadow: true)
+    let phoneButton = UIButton(title: "Phone", titleColor: .butonGreen, backgroundColor: .white, isShadow: true)
     let emailButton = UIButton(title: "Email", titleColor: .white, backgroundColor: .buttonDark(), isShadow: false)
     let loginButton = UIButton(title: "Login", titleColor: .buttonRed(), backgroundColor: .white, isShadow: true)
     
@@ -28,6 +28,7 @@ class AuthViewController: UIViewController {
         view.backgroundColor = .white
         setupConstraints()
         googleButton.customizeGoogleButton()
+        phoneButton.customizePhoneButton()
     }
 }
 
@@ -41,9 +42,10 @@ extension AuthViewController {
         
         
         let googleButtonView = ButtonFormView(label: googleLabel, button: googleButton)
-        let emailButtonView = ButtonFormView(label: emailLabel, button: emailButton)
+        let emailButtonView = ButtonFormView(label: UILabel(title: ""), button: emailButton)
         let loginButtonView = ButtonFormView(label: loginLabel, button: loginButton)
-        let stackView = UIStackView(arrangedSubviews: [googleButtonView, emailButtonView, loginButtonView])
+        let phoneButtonView = ButtonFormView(label: emailLabel, button: phoneButton)
+        let stackView = UIStackView(arrangedSubviews: [googleButtonView,phoneButtonView, emailButtonView, loginButtonView])
         stackView.axis = .vertical
         stackView.spacing = 40
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -53,12 +55,12 @@ extension AuthViewController {
         view.addSubview(stackView)
         
         NSLayoutConstraint.activate([
-            logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 160),
+            logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 140),
         logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             ])
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 160),
+            stackView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 120),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])

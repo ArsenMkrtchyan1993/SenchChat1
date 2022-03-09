@@ -31,4 +31,7 @@ extension UIColor {
     static var headerColor:UIColor {
         return #colorLiteral(red: 0.5725490196, green: 0.5725490196, blue: 0.5725490196, alpha: 1)
     }
+    static var butonGreen:UIColor {
+        return #colorLiteral(red: 0.2745098174, green: 0.705027136, blue: 0.1411764771, alpha: 1)
+    }
 }
