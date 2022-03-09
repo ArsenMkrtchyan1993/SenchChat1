@@ -15,7 +15,8 @@ class AuthViewController: UIViewController {
     let emailLabel = UILabel(title: "Or sign up with")
     let loginLabel = UILabel(title: "Already onboard?")
     
-    
+    let singUpVC = SingUpViewController()
+    let loginVC = LoginViewController()
     let googleButton = UIButton(title: "Google", titleColor: .black, backgroundColor: .white,  isShadow: true)
     let phoneButton = UIButton(title: "Phone", titleColor: .butonGreen, backgroundColor: .white, isShadow: true)
     let emailButton = UIButton(title: "Email", titleColor: .white, backgroundColor: .buttonDark(), isShadow: false)
@@ -25,11 +26,25 @@ class AuthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        setupConstraints()
         googleButton.customizeGoogleButton()
         phoneButton.customizePhoneButton()
+        view.backgroundColor = .white
+        setupConstraints()
+       
+        emailButton.addTarget(self, action: #selector(emailButtonTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        
     }
+    
+    
+    @objc private func emailButtonTapped() {
+        present(singUpVC, animated: true, completion: nil)
+         
+    }
+    @objc private func loginButtonTapped() {
+        present(loginVC, animated: true, completion: nil)
+    }
+    
 }
 
 // MARK: - Setup constraints

@@ -35,7 +35,23 @@ class SingUpViewController: UIViewController {
        
         setupConstraints()
         
-        
+        singUpButton.addTarget(self, action: #selector(singUpButtonTapped), for: .touchUpInside)
+    }
+    
+    
+    @objc private func singUpButtonTapped() {
+        AuthService.shared.register(email: emailTextField.text,
+                                    password: passwordTextField.text,
+                                    confirmPass: confirmPasswordTextFiled.text) { result in
+            switch result {
+                
+            case .success(let user ):
+                self.showAlert(title: "normala", message: "grancvec")
+                print(user.email)
+            case .failure(let error):
+                self.showAlert(title: "error", message: error.localizedDescription)
+            }
+        }
     }
 }
 
@@ -116,3 +132,13 @@ struct SingUpVCProvider: PreviewProvider {
     
 }
 
+extension UIViewController {
+    
+    
+    func showAlert(title:String, message:String){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler:nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+}

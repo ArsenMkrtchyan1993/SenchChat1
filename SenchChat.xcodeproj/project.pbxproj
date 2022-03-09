@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F32B296527D902740030999D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B296427D902740030999D /* AuthService.swift */; };
 		F3436C8527C6A98E004A65C3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3436C8427C6A98E004A65C3 /* LoginViewController.swift */; };
 		F349A87827C8D50A0028260D /* SegmentedControl + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F349A87727C8D5090028260D /* SegmentedControl + Extension.swift */; };
 		F3554FDB27C393FB00B28BA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3554FDA27C393FB00B28BA3 /* AppDelegate.swift */; };
@@ -72,6 +73,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F32B296427D902740030999D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F3436C8427C6A98E004A65C3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F349A87727C8D5090028260D /* SegmentedControl + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentedControl + Extension.swift"; sourceTree = "<group>"; };
 		F3554FD727C393FB00B28BA3 /* SenchChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SenchChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +150,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F32B296327D9022D0030999D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F3E0542427D39C1900F2346E /* Models */,
+				F32B296427D902740030999D /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		F3554FCE27C393FB00B28BA3 = {
 			isa = PBXGroup;
 			children = (
@@ -173,7 +184,7 @@
 			children = (
 				F3554FDA27C393FB00B28BA3 /* AppDelegate.swift */,
 				F3554FDC27C393FB00B28BA3 /* SceneDelegate.swift */,
-				F3E0542427D39C1900F2346E /* Models */,
+				F32B296327D9022D0030999D /* Services */,
 				F3CC4A3A27C93019002CD8A0 /* Controllers */,
 				F3CC4A3827C92EF7002CD8A0 /* Singin  & Auth */,
 				F39BF7D127D248AF005A9FB7 /* Protocols */,
@@ -465,6 +476,7 @@
 				F3CC4A3C27C93056002CD8A0 /* MainTabBarController.swift in Sources */,
 				F39BF7CE27D24317005A9FB7 /* WaitingChatCell.swift in Sources */,
 				F3FC436627D766ED0079936E /* ChatRequestViewController.swift in Sources */,
+				F32B296527D902740030999D /* AuthService.swift in Sources */,
 				F363CEFB27D511F500DB6473 /* UIView + Extension.swift in Sources */,
 				F3EB987A27C6747D0013DCF6 /* SingUpViewController.swift in Sources */,
 				F3E0542127D39A4200F2346E /* MUser.swift in Sources */,
