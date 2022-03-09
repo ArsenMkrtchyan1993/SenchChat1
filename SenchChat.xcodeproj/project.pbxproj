@@ -21,6 +21,7 @@
 		F363CEF727D4F66000DB6473 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F363CEF627D4F66000DB6473 /* ProfileViewController.swift */; };
 		F363CEF927D507E400DB6473 /* InsertableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F363CEF827D507E400DB6473 /* InsertableTextField.swift */; };
 		F363CEFB27D511F500DB6473 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F363CEFA27D511F400DB6473 /* UIView + Extension.swift */; };
+		F383B5E627D8E1BE00524E15 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F383B5E527D8E1BE00524E15 /* GoogleService-Info.plist */; };
 		F39BF7CC27D23B6C005A9FB7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BF7CB27D23B6C005A9FB7 /* GradientView.swift */; };
 		F39BF7CE27D24317005A9FB7 /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BF7CD27D24317005A9FB7 /* WaitingChatCell.swift */; };
 		F39BF7D027D2489B005A9FB7 /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BF7CF27D2489B005A9FB7 /* SelfConfiguringCell.swift */; };
@@ -48,6 +49,8 @@
 		F3EB987A27C6747D0013DCF6 /* SingUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB987927C6747D0013DCF6 /* SingUpViewController.swift */; };
 		F3EB987C27C67A0F0013DCF6 /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB987B27C67A0F0013DCF6 /* OneLineTextField.swift */; };
 		F3EB987E27C67F050013DCF6 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB987D27C67F050013DCF6 /* UIStackView + Extension.swift */; };
+		F3F8516727D8E04B00CDB202 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F3F8516627D8E04B00CDB202 /* FirebaseAnalytics */; };
+		F3F8516927D8E04B00CDB202 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F3F8516827D8E04B00CDB202 /* FirebaseAuth */; };
 		F3FC436627D766ED0079936E /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FC436527D766ED0079936E /* ChatRequestViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +90,7 @@
 		F363CEF627D4F66000DB6473 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F363CEF827D507E400DB6473 /* InsertableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertableTextField.swift; sourceTree = "<group>"; };
 		F363CEFA27D511F400DB6473 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		F383B5E527D8E1BE00524E15 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Users/arsenmkrtchyan/Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F39BF7CB27D23B6C005A9FB7 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		F39BF7CD27D24317005A9FB7 /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
 		F39BF7CF27D2489B005A9FB7 /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F8516727D8E04B00CDB202 /* FirebaseAnalytics in Frameworks */,
+				F3F8516927D8E04B00CDB202 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +181,7 @@
 				F3554FE627C393FD00B28BA3 /* Assets.xcassets */,
 				F3554FE827C393FD00B28BA3 /* LaunchScreen.storyboard */,
 				F3554FEB27C393FD00B28BA3 /* Info.plist */,
+				F383B5E527D8E1BE00524E15 /* GoogleService-Info.plist */,
 				F3554FE327C393FB00B28BA3 /* SenchChat.xcdatamodeld */,
 			);
 			path = SenchChat;
@@ -306,6 +313,10 @@
 			dependencies = (
 			);
 			name = SenchChat;
+			packageProductDependencies = (
+				F3F8516627D8E04B00CDB202 /* FirebaseAnalytics */,
+				F3F8516827D8E04B00CDB202 /* FirebaseAuth */,
+			);
 			productName = SenchChat;
 			productReference = F3554FD727C393FB00B28BA3 /* SenchChat.app */;
 			productType = "com.apple.product-type.application";
@@ -378,6 +389,9 @@
 				Base,
 			);
 			mainGroup = F3554FCE27C393FB00B28BA3;
+			packageReferences = (
+				F3F8516527D8E04B00CDB202 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = F3554FD827C393FB00B28BA3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -399,6 +413,7 @@
 				F3AD057D27D005F500FDF0A1 /* activeChats.json in Resources */,
 				F3554FE727C393FD00B28BA3 /* Assets.xcassets in Resources */,
 				F3AD057E27D005F500FDF0A1 /* waitingChats.json in Resources */,
+				F383B5E627D8E1BE00524E15 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -790,6 +805,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F3F8516527D8E04B00CDB202 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F3F8516627D8E04B00CDB202 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3F8516527D8E04B00CDB202 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		F3F8516827D8E04B00CDB202 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3F8516527D8E04B00CDB202 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F3554FE327C393FB00B28BA3 /* SenchChat.xcdatamodeld */ = {
