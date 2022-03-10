@@ -47,7 +47,7 @@ class LoginViewController: UIViewController {
                 
             case .success(let user):
                 self.showAlert(title: "Good", message: "You are in bord") {
-                    self.present(SetupProfileViewController(), animated: true, completion: nil)
+                    self.present(SetupProfileViewController(currentUser: user), animated: true, completion: nil)
                 }
             case .failure(let error):
                 self.showAlert(title: "sxal", message: error.localizedDescription)
