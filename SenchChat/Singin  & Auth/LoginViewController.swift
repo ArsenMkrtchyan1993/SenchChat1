@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
         return button
     }()
     
-    
+    weak var delegate: AuthNavigatingDelegate?
     
     
     override func viewDidLoad() {
@@ -38,6 +38,7 @@ class LoginViewController: UIViewController {
         googleButton.customizeGoogleButton()
         
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        singUpButton.addTarget(self, action: #selector(singUpButtonTapped), for: .touchUpInside)
     }
     
     @objc private func loginButtonTapped() {
@@ -45,14 +46,19 @@ class LoginViewController: UIViewController {
             switch result {
                 
             case .success(let user):
-                self.showAlert(title: "bari galust", message: "chisht")
-                print(user.displayName)
+                self.showAlert(title: "Good", message: "You are in bord") {
+                    self.present(SetupProfileViewController(), animated: true, completion: nil)
+                }
             case .failure(let error):
                 self.showAlert(title: "sxal", message: error.localizedDescription)
             }
         }
     }
-    
+    @objc private func singUpButtonTapped() {
+        dismiss(animated: true) {
+            self.delegate?.toSingUpVC()
+        }
+    }
 }
 
 

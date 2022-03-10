@@ -30,7 +30,8 @@ class AuthViewController: UIViewController {
         phoneButton.customizePhoneButton()
         view.backgroundColor = .white
         setupConstraints()
-       
+        singUpVC.delegate = self
+        loginVC.delegate = self
         emailButton.addTarget(self, action: #selector(emailButtonTapped), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         
@@ -81,7 +82,17 @@ extension AuthViewController {
         ])
     }
 }
-
+extension AuthViewController: AuthNavigatingDelegate {
+    func toLoginVC() {
+        present(loginVC, animated: true, completion: nil)
+    }
+    
+    func toSingUpVC() {
+        present(singUpVC, animated: true, completion: nil)
+    }
+    
+    
+}
 // MARK: - SwiftUI
 
 import SwiftUI

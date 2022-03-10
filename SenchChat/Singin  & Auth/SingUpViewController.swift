@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol AuthNavigatingDelegate: class {
+    func toLoginVC()
+    func toSingUpVC()
+}
+
 class SingUpViewController: UIViewController {
     
     let welcomeLabel = UILabel(title: "God to see you!", font: .avenir26())
@@ -22,6 +27,8 @@ class SingUpViewController: UIViewController {
         button.titleLabel?.font = .avenir20()
         return button
     }()
+    weak var delegate: AuthNavigatingDelegate?
+    
     let emailTextField = OneLineTextField(font: .avenir20())
     let passwordTextField = OneLineTextField(font: .avenir20())
     let confirmPasswordTextFiled = OneLineTextField(font: .avenir20())
@@ -36,6 +43,7 @@ class SingUpViewController: UIViewController {
         setupConstraints()
         
         singUpButton.addTarget(self, action: #selector(singUpButtonTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
     
@@ -46,12 +54,20 @@ class SingUpViewController: UIViewController {
             switch result {
                 
             case .success(let user ):
-                self.showAlert(title: "normala", message: "grancvec")
-                print(user.email)
+                self.showAlert(title: "Good", message: "You are in bord") {
+                    self.present(SetupProfileViewController(), animated: true, completion: nil)
+                }
             case .failure(let error):
                 self.showAlert(title: "error", message: error.localizedDescription)
             }
         }
+    }
+    
+    @objc private func loginButtonTapped() {
+        dismiss(animated: true) {
+            self.delegate?.toLoginVC()
+        }
+        
     }
 }
 
@@ -135,9 +151,11 @@ struct SingUpVCProvider: PreviewProvider {
 extension UIViewController {
     
     
-    func showAlert(title:String, message:String){
+    func showAlert(title:String, message:String,completion: @escaping () -> Void = {}){
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler:nil)
+        let okAction = UIAlertAction(title:"OK",style:.default) { (_)
+            in completion()
+        }
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)
     }
