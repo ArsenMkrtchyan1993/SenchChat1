@@ -47,6 +47,15 @@ class LoginViewController: UIViewController {
                 
             case .success(let user):
                 self.showAlert(title: "Good", message: "You are in bord") {
+                    FirestoreService.shared.getUserData(user: user) { result in
+                        switch result {
+                            
+                        case .success(_):
+                            self.present(MainTabBarController(), animated: true, completion: nil)
+                        case .failure(_):
+                            self.present(SetupProfileViewController(currentUser: user), animated: true, completion: nil)
+                        }
+                    }
                     self.present(SetupProfileViewController(currentUser: user), animated: true, completion: nil)
                 }
             case .failure(let error):

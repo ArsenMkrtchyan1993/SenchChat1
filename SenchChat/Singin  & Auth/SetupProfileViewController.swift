@@ -50,7 +50,9 @@ class SetupProfileViewController: UIViewController {
             switch result {
                 
             case .success(let mUser):
-                self.showAlert(title: "Good", message: "Bari jamanc")
+                self.showAlert(title: "Good", message: "Bari jamanc",completion: {
+                    self.present(MainTabBarController(), animated: true, completion: nil)
+                })
                     print(mUser)
             case .failure(let error):
                 self.showAlert(title: "Good", message:error.localizedDescription)
@@ -64,6 +66,7 @@ class SetupProfileViewController: UIViewController {
 // MARK: - Setup constraints
 extension SetupProfileViewController {
     private func setupConstraints() {
+        phoneNumberFiled.text = "+374"
         let fullNameStackView = UIStackView(arrangedSubviews: [fullNameLabel,fullNameTextField], axis: .vertical, spacing: 0)
         let phoneNumberStackView = UIStackView(arrangedSubviews: [phoneNumberLabel,phoneNumberFiled], axis: .vertical, spacing: 0)
         let aboutMeStackView = UIStackView(arrangedSubviews: [aboutMeLabel,aboutMeTextField], axis: .vertical, spacing: 0)

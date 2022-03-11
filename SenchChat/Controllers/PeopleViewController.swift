@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 
 class PeopleViewController: UIViewController {
     
@@ -31,7 +31,24 @@ class PeopleViewController: UIViewController {
         setupCollectionView()
         createDataSource()
         reloadData(whit: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(singOut))
         }
+    
+    
+    @objc private func singOut() {
+        
+        let ac = UIAlertController(title: nil, message: "Are you sure that you wont to sing out", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        ac.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { _ in
+            do {
+                try Auth.auth().signOut()
+                UIApplication.shared.keyWindow?.rootViewController = AuthViewController()
+            } catch {
+                print("Error to sing out \(error)")
+            }
+        }))
+        present(ac, animated: true, completion: nil)
+    }
     
     private func setupSearchBar() {
         navigationController?.navigationBar.tintColor = .mainWhite()
