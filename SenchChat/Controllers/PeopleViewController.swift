@@ -10,7 +10,8 @@ import FirebaseAuth
 
 class PeopleViewController: UIViewController {
     
-    let users = Bundle.main.decode([MUser].self, from: "users.json")
+    //let users = Bundle.main.decode([MUser].self, from: "users.json")
+    let users = [MUser]()
     var collectionView: UICollectionView!
     var dataSource:UICollectionViewDiffableDataSource<Section,MUser>!
     
@@ -31,7 +32,8 @@ class PeopleViewController: UIViewController {
         setupCollectionView()
         createDataSource()
         reloadData(whit: nil)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(singOut))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(singOut))
+        navigationItem.rightBarButtonItem?.tintColor = .systemBlue
         }
     
     
