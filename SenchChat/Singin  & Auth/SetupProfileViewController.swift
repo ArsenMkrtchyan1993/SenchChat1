@@ -14,8 +14,10 @@ class SetupProfileViewController: UIViewController {
     let fullNameLabel = UILabel(title: "Full Name")
     let aboutMeLabel = UILabel(title: "About me")
     let sexLabel = UILabel(title: "Sex")
+    let phoneNumberLabel = UILabel(title: "Phone Number")
     let fullNameTextField = OneLineTextField(font: .avenir20())
     let aboutMeTextField = OneLineTextField(font: .avenir20())
+    let phoneNumberFiled = OneLineTextField(font: .avenir20())
     let sexSegmentControl = UISegmentedControl(first: "Male", second: "Female")
     let goToChatsButton = UIButton(title: "Go to chats!", titleColor: .white, backgroundColor: .buttonDark(), isShadow: false)
     
@@ -39,6 +41,7 @@ class SetupProfileViewController: UIViewController {
     
     @objc private func goToChatsButtonTappet() {
         FirestoreService.shared.saveProfileWith(id: currentUser.uid,
+                                                phoneNumber:phoneNumberFiled.text!,
                                                 email: currentUser.email!,
                                                 userName: fullNameTextField.text,
                                                 avatarImageString: "nil",
@@ -62,11 +65,13 @@ class SetupProfileViewController: UIViewController {
 extension SetupProfileViewController {
     private func setupConstraints() {
         let fullNameStackView = UIStackView(arrangedSubviews: [fullNameLabel,fullNameTextField], axis: .vertical, spacing: 0)
+        let phoneNumberStackView = UIStackView(arrangedSubviews: [phoneNumberLabel,phoneNumberFiled], axis: .vertical, spacing: 0)
         let aboutMeStackView = UIStackView(arrangedSubviews: [aboutMeLabel,aboutMeTextField], axis: .vertical, spacing: 0)
         let sexStackView = UIStackView(arrangedSubviews: [sexLabel,sexSegmentControl], axis: .vertical, spacing: 10)
         goToChatsButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
         let stackView = UIStackView(arrangedSubviews: [
                                         fullNameStackView,
+                                        phoneNumberStackView,
                                         aboutMeStackView,
                                         sexStackView,
                                         goToChatsButton
