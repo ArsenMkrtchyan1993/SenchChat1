@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
 class LoginViewController: UIViewController {
     let welcomeLabel = UILabel(title: "Welcome Back!", font: .avenir26())
@@ -39,6 +41,7 @@ class LoginViewController: UIViewController {
         
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         singUpButton.addTarget(self, action: #selector(singUpButtonTapped), for: .touchUpInside)
+        googleButton.addTarget(self, action: #selector(googleButtonTapped), for: .touchUpInside)
     }
     
     @objc private func loginButtonTapped() {
@@ -65,6 +68,41 @@ class LoginViewController: UIViewController {
                 self.showAlert(title: "sxal", message: error.localizedDescription)
             }
     }
+}
+    @objc private func googleButtonTapped() {
+    
+    guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+
+    // Create Google Sign In configuration object.
+    let config = GIDConfiguration(clientID: clientID)
+
+    // Start the sign in flow!
+    GIDSignIn.sharedInstance.signIn(with: config, presenting: self) { [unowned self] user, error in
+
+        AuthService.shared.googleLogin(user: user, error: error) { (result)
+            in
+            switch result {
+                
+            case .success(let user):
+                FirestoreService.shared.getUserData(user: user) { result in
+                    switch result {
+                        
+                    case .success(let user):
+                        let mainTapBar = MainTabBarController(currentUser: user)
+                        mainTapBar.modalPresentationStyle = .fullScreen
+                        self.present(mainTapBar, animated: true, completion: nil)
+                    case .failure(_):
+                        self.showAlert(title: "Good", message: "You are in Board") {
+                            self.present(SetupProfileViewController(currentUser: user), animated: true, completion: nil)
+                        }
+                    }
+                }
+            case .failure(let error):
+                self.showAlert(title: "Error", message: error.localizedDescription)
+            }
+        }
+    }
+    
 }
     @objc private func singUpButtonTapped() {
         dismiss(animated: true) {

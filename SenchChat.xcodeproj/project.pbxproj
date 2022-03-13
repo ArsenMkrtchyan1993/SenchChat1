@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04F44103CEE8E30154A8ABF7 /* Pods_SenchChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A88C971A0F4A35A3992851A /* Pods_SenchChatTests.framework */; };
+		B77292F184428E0E4C39E383 /* Pods_SenchChat_SenchChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86BAE4427EA1DCA919D08DC5 /* Pods_SenchChat_SenchChatUITests.framework */; };
+		EEFB2E2B44DB3EED352D0D40 /* Pods_SenchChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0310B7322541967BF9A27BE /* Pods_SenchChat.framework */; };
 		F32B296527D902740030999D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B296427D902740030999D /* AuthService.swift */; };
 		F32B296727D918F90030999D /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B296627D918F90030999D /* Validators.swift */; };
 		F32B296927D91C3B0030999D /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B296827D91C3B0030999D /* AuthError.swift */; };
@@ -29,11 +32,6 @@
 		F39BF7CE27D24317005A9FB7 /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BF7CD27D24317005A9FB7 /* WaitingChatCell.swift */; };
 		F39BF7D027D2489B005A9FB7 /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BF7CF27D2489B005A9FB7 /* SelfConfiguringCell.swift */; };
 		F39BF7D327D24D1B005A9FB7 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BF7D227D24D1B005A9FB7 /* SectionHeader.swift */; };
-		F39D297927DA37B600140C5E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F39D297827DA37B600140C5E /* FirebaseAnalytics */; };
-		F39D297B27DA37B600140C5E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F39D297A27DA37B600140C5E /* FirebaseAuth */; };
-		F39D297D27DA37B600140C5E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F39D297C27DA37B600140C5E /* FirebaseDatabase */; };
-		F39D297F27DA37B600140C5E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F39D297E27DA37B600140C5E /* FirebaseFirestore */; };
-		F39D298127DA37B600140C5E /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = F39D298027DA37B600140C5E /* FirebaseFunctions */; };
 		F39D298327DA380000140C5E /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39D298227DA380000140C5E /* FirestoreService.swift */; };
 		F39D298627DA3B0800140C5E /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39D298527DA3B0800140C5E /* UserError.swift */; };
 		F3AD057A27CFFCEA00FDF0A1 /* Bundle - extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AD057927CFFCEA00FDF0A1 /* Bundle - extension.swift */; };
@@ -80,6 +78,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0165873D1FD00FEE700D79AE /* Pods-SenchChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SenchChat.release.xcconfig"; path = "Target Support Files/Pods-SenchChat/Pods-SenchChat.release.xcconfig"; sourceTree = "<group>"; };
+		1F0D0297449362DEFC1F9EA9 /* Pods-SenchChat-SenchChatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SenchChat-SenchChatUITests.debug.xcconfig"; path = "Target Support Files/Pods-SenchChat-SenchChatUITests/Pods-SenchChat-SenchChatUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		288A6247EC8437CE783A32FF /* Pods-SenchChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SenchChatTests.debug.xcconfig"; path = "Target Support Files/Pods-SenchChatTests/Pods-SenchChatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		40F94E828CC808DD76952EBD /* Pods-SenchChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SenchChat.debug.xcconfig"; path = "Target Support Files/Pods-SenchChat/Pods-SenchChat.debug.xcconfig"; sourceTree = "<group>"; };
+		7A88C971A0F4A35A3992851A /* Pods_SenchChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SenchChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DA4FA1EBB9A580AE1901490 /* Pods-SenchChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SenchChatTests.release.xcconfig"; path = "Target Support Files/Pods-SenchChatTests/Pods-SenchChatTests.release.xcconfig"; sourceTree = "<group>"; };
+		86BAE4427EA1DCA919D08DC5 /* Pods_SenchChat_SenchChatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SenchChat_SenchChatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB47976ED8FAFDEDF16B0AF4 /* Pods-SenchChat-SenchChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SenchChat-SenchChatUITests.release.xcconfig"; path = "Target Support Files/Pods-SenchChat-SenchChatUITests/Pods-SenchChat-SenchChatUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F0310B7322541967BF9A27BE /* Pods_SenchChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SenchChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F32B296427D902740030999D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F32B296627D918F90030999D /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
 		F32B296827D91C3B0030999D /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
@@ -139,11 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F39D297D27DA37B600140C5E /* FirebaseDatabase in Frameworks */,
-				F39D297F27DA37B600140C5E /* FirebaseFirestore in Frameworks */,
-				F39D298127DA37B600140C5E /* FirebaseFunctions in Frameworks */,
-				F39D297927DA37B600140C5E /* FirebaseAnalytics in Frameworks */,
-				F39D297B27DA37B600140C5E /* FirebaseAuth in Frameworks */,
+				EEFB2E2B44DB3EED352D0D40 /* Pods_SenchChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F44103CEE8E30154A8ABF7 /* Pods_SenchChatTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,12 +162,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B77292F184428E0E4C39E383 /* Pods_SenchChat_SenchChatUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7012F572920258377837E50E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				40F94E828CC808DD76952EBD /* Pods-SenchChat.debug.xcconfig */,
+				0165873D1FD00FEE700D79AE /* Pods-SenchChat.release.xcconfig */,
+				1F0D0297449362DEFC1F9EA9 /* Pods-SenchChat-SenchChatUITests.debug.xcconfig */,
+				AB47976ED8FAFDEDF16B0AF4 /* Pods-SenchChat-SenchChatUITests.release.xcconfig */,
+				288A6247EC8437CE783A32FF /* Pods-SenchChatTests.debug.xcconfig */,
+				7DA4FA1EBB9A580AE1901490 /* Pods-SenchChatTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CDAA9B3D14EEF3EBBE3D47D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F0310B7322541967BF9A27BE /* Pods_SenchChat.framework */,
+				86BAE4427EA1DCA919D08DC5 /* Pods_SenchChat_SenchChatUITests.framework */,
+				7A88C971A0F4A35A3992851A /* Pods_SenchChatTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F32B296327D9022D0030999D /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +219,8 @@
 				F3554FF327C393FD00B28BA3 /* SenchChatTests */,
 				F3554FFD27C393FE00B28BA3 /* SenchChatUITests */,
 				F3554FD827C393FB00B28BA3 /* Products */,
+				7012F572920258377837E50E /* Pods */,
+				CDAA9B3D14EEF3EBBE3D47D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -341,9 +371,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F355500427C393FE00B28BA3 /* Build configuration list for PBXNativeTarget "SenchChat" */;
 			buildPhases = (
+				78615140986EB48F86C4168A /* [CP] Check Pods Manifest.lock */,
 				F3554FD327C393FB00B28BA3 /* Sources */,
 				F3554FD427C393FB00B28BA3 /* Frameworks */,
 				F3554FD527C393FB00B28BA3 /* Resources */,
+				8577F1600827D52C4B4F39F8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -351,11 +383,6 @@
 			);
 			name = SenchChat;
 			packageProductDependencies = (
-				F39D297827DA37B600140C5E /* FirebaseAnalytics */,
-				F39D297A27DA37B600140C5E /* FirebaseAuth */,
-				F39D297C27DA37B600140C5E /* FirebaseDatabase */,
-				F39D297E27DA37B600140C5E /* FirebaseFirestore */,
-				F39D298027DA37B600140C5E /* FirebaseFunctions */,
 			);
 			productName = SenchChat;
 			productReference = F3554FD727C393FB00B28BA3 /* SenchChat.app */;
@@ -365,6 +392,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F355500727C393FE00B28BA3 /* Build configuration list for PBXNativeTarget "SenchChatTests" */;
 			buildPhases = (
+				0B1E999023AC3F9B88BCE8C1 /* [CP] Check Pods Manifest.lock */,
 				F3554FEC27C393FD00B28BA3 /* Sources */,
 				F3554FED27C393FD00B28BA3 /* Frameworks */,
 				F3554FEE27C393FD00B28BA3 /* Resources */,
@@ -383,9 +411,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F355500A27C393FE00B28BA3 /* Build configuration list for PBXNativeTarget "SenchChatUITests" */;
 			buildPhases = (
+				F1C970476D01FF78017E87B8 /* [CP] Check Pods Manifest.lock */,
 				F3554FF627C393FE00B28BA3 /* Sources */,
 				F3554FF727C393FE00B28BA3 /* Frameworks */,
 				F3554FF827C393FE00B28BA3 /* Resources */,
+				F0DC57C7726C6EDD1FF3454D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -430,7 +460,6 @@
 			);
 			mainGroup = F3554FCE27C393FB00B28BA3;
 			packageReferences = (
-				F39D297727DA37B600140C5E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = F3554FD827C393FB00B28BA3 /* Products */;
 			projectDirPath = "";
@@ -472,6 +501,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B1E999023AC3F9B88BCE8C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SenchChatTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78615140986EB48F86C4168A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SenchChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8577F1600827D52C4B4F39F8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SenchChat/Pods-SenchChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SenchChat/Pods-SenchChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SenchChat/Pods-SenchChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0DC57C7726C6EDD1FF3454D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SenchChat-SenchChatUITests/Pods-SenchChat-SenchChatUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SenchChat-SenchChatUITests/Pods-SenchChat-SenchChatUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SenchChat-SenchChatUITests/Pods-SenchChat-SenchChatUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1C970476D01FF78017E87B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SenchChat-SenchChatUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F3554FD327C393FB00B28BA3 /* Sources */ = {
@@ -682,6 +814,7 @@
 		};
 		F355500527C393FE00B28BA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40F94E828CC808DD76952EBD /* Pods-SenchChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -709,6 +842,7 @@
 		};
 		F355500627C393FE00B28BA3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0165873D1FD00FEE700D79AE /* Pods-SenchChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -736,6 +870,7 @@
 		};
 		F355500827C393FE00B28BA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 288A6247EC8437CE783A32FF /* Pods-SenchChatTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -756,6 +891,7 @@
 		};
 		F355500927C393FE00B28BA3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DA4FA1EBB9A580AE1901490 /* Pods-SenchChatTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -776,6 +912,7 @@
 		};
 		F355500B27C393FE00B28BA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F0D0297449362DEFC1F9EA9 /* Pods-SenchChat-SenchChatUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -794,6 +931,7 @@
 		};
 		F355500C27C393FE00B28BA3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB47976ED8FAFDEDF16B0AF4 /* Pods-SenchChat-SenchChatUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -850,45 +988,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		F39D297727DA37B600140C5E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		F39D297827DA37B600140C5E /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F39D297727DA37B600140C5E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		F39D297A27DA37B600140C5E /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F39D297727DA37B600140C5E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		F39D297C27DA37B600140C5E /* FirebaseDatabase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F39D297727DA37B600140C5E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDatabase;
-		};
-		F39D297E27DA37B600140C5E /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F39D297727DA37B600140C5E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		F39D298027DA37B600140C5E /* FirebaseFunctions */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F39D297727DA37B600140C5E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFunctions;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F3554FE327C393FB00B28BA3 /* SenchChat.xcdatamodeld */ = {

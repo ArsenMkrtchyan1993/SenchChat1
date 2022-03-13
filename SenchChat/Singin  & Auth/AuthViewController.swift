@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import GoogleSignIn
+import FirebaseAuth
+import Firebase
 
 class AuthViewController: UIViewController {
     
@@ -34,6 +37,7 @@ class AuthViewController: UIViewController {
         loginVC.delegate = self
         emailButton.addTarget(self, action: #selector(emailButtonTapped), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        googleButton.addTarget(self, action: #selector(googleButtonTapped), for: .touchUpInside)
         
     }
     
@@ -44,6 +48,42 @@ class AuthViewController: UIViewController {
     }
     @objc private func loginButtonTapped() {
         present(loginVC, animated: true, completion: nil)
+    }
+    
+    @objc private func googleButtonTapped() {
+        
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+
+        // Create Google Sign In configuration object.
+        let config = GIDConfiguration(clientID: clientID)
+
+        // Start the sign in flow!
+        GIDSignIn.sharedInstance.signIn(with: config, presenting: self) { [unowned self] user, error in
+
+            AuthService.shared.googleLogin(user: user, error: error) { (result)
+                in
+                switch result {
+                    
+                case .success(let user):
+                    FirestoreService.shared.getUserData(user: user) { result in
+                        switch result {
+                            
+                        case .success(let user):
+                            let mainTapBar = MainTabBarController(currentUser: user)
+                            mainTapBar.modalPresentationStyle = .fullScreen
+                            self.present(mainTapBar, animated: true, completion: nil)
+                        case .failure(_):
+                            self.showAlert(title: "Good", message: "You are in Board") {
+                                self.present(SetupProfileViewController(currentUser: user), animated: true, completion: nil)
+                            }
+                        }
+                    }
+                case .failure(let error):
+                    self.showAlert(title: "Error", message: error.localizedDescription)
+                }
+            }
+        }
+        
     }
     
 }
