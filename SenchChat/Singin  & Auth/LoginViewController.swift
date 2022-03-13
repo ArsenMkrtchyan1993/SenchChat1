@@ -42,7 +42,8 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func loginButtonTapped() {
-        AuthService.shared.login(email: emailTextField.text, password: passwordTextField.text) { result in
+        AuthService.shared.login(email: emailTextField.text,
+                                 password: passwordTextField.text) { result in
             switch result {
                 
             case .success(let user):
@@ -50,19 +51,21 @@ class LoginViewController: UIViewController {
                     FirestoreService.shared.getUserData(user: user) { result in
                         switch result {
                             
-                        case .success(_):
-                            self.present(MainTabBarController(), animated: true, completion: nil)
+                        case .success(let mUser):
+                            let mainTapBar = MainTabBarController(currentUser: mUser)
+                            mainTapBar.modalPresentationStyle = .fullScreen
+                            self.present(mainTapBar, animated: true, completion: nil)
                         case .failure(_):
                             self.present(SetupProfileViewController(currentUser: user), animated: true, completion: nil)
                         }
                     }
-                    self.present(SetupProfileViewController(currentUser: user), animated: true, completion: nil)
+                    
                 }
             case .failure(let error):
                 self.showAlert(title: "sxal", message: error.localizedDescription)
             }
-        }
     }
+}
     @objc private func singUpButtonTapped() {
         dismiss(animated: true) {
             self.delegate?.toSingUpVC()

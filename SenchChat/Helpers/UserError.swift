@@ -19,8 +19,8 @@ enum UserError {
 extension UserError: LocalizedError {
     
     var errorDescription: String? {
+      
         switch self {
-            
         case .notFilled:
             return NSLocalizedString("lracreq bolor dashtery", comment: "")
         case .photoNotExist:

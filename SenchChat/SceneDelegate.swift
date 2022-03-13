@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 switch result {
                     
                 case .success(let mUser):
-                    self.window?.rootViewController = MainTabBarController() 
+                    self.window?.rootViewController = MainTabBarController(currentUser: mUser)
                 case .failure(let error):
                     self.window?.rootViewController = AuthViewController()
                 }

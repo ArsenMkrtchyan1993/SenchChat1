@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 
 class PeopleViewController: UIViewController {
-    
+    private let currentUser: MUser
     //let users = Bundle.main.decode([MUser].self, from: "users.json")
     let users = [MUser]()
     var collectionView: UICollectionView!
@@ -24,6 +24,15 @@ class PeopleViewController: UIViewController {
                 return "\(usersCount) People nearby"
             }
         }
+    }
+    init(currentUser: MUser){
+        self.currentUser = currentUser
+        super.init(nibName: nil, bundle: nil)
+        title = currentUser.userName
+    }
+     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {

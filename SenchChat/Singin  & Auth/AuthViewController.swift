@@ -55,8 +55,6 @@ extension AuthViewController {
     
     private func setupConstraints() {
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        
-        
         let googleButtonView = ButtonFormView(label: googleLabel, button: googleButton)
         let emailButtonView = ButtonFormView(label: UILabel(title: ""), button: emailButton)
         let loginButtonView = ButtonFormView(label: loginLabel, button: loginButton)
