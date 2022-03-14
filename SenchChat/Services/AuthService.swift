@@ -17,6 +17,7 @@ import GoogleSignIn
 class AuthService {
     static let shared = AuthService()
     private let auth = Auth.auth()
+    private var verificationId: String?
     
     func login(email: String?, password:String?, completion: @escaping (Result<User,Error>) -> Void) {
         guard let email = email,
@@ -56,6 +57,33 @@ class AuthService {
             completion(.success(result.user))
         }
     }
+    func phoneRegister(phoneNumber: String, completion: @escaping (Bool) -> Void) {
+        
+        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { verificationId, error in
+            guard let verificationId = verificationId, error == nil else {
+                completion(false)
+                return
+            }
+            self.verificationId = verificationId
+            completion(true)
+        }
+        
+    }
+    
+    func verifyCode(smsCode: String,completion: @escaping (Result<User,Error>) -> Void) {
+        guard let verificationId = verificationId else {
+            return
+        }
+        let credential = PhoneAuthProvider.provider().credential(withVerificationID: verificationId, verificationCode: smsCode)
+        Auth.auth().signIn(with: credential) { result, error in
+            guard let result = result else {
+                completion(.failure(error!))
+                return
+            }
+            completion(.success(result.user))
+        }
+    }
+    
     
     func register(email: String?, password:String?, confirmPass:String?, completion: @escaping (Result<User,Error>) -> Void) {
         

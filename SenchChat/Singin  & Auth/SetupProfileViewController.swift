@@ -28,6 +28,9 @@ class SetupProfileViewController: UIViewController {
             if let username = currentUser.displayName {
                 fullNameTextField.text = username
             }
+            if let userNumber = currentUser.phoneNumber {
+                phoneNumberLabel.text = userNumber
+            }
             //TODO set google image
         }
     
@@ -44,9 +47,10 @@ class SetupProfileViewController: UIViewController {
     }
     
     @objc private func goToChatsButtonTappet() {
+       
         FirestoreService.shared.saveProfileWith(id: currentUser.uid,
                                                 phoneNumber:phoneNumberFiled.text!,
-                                                email: currentUser.email!,
+                                                email: currentUser.email ?? "",
                                                 userName: fullNameTextField.text,
                                                 avatarImageString: "nil",
                                                 description: aboutMeTextField.text,
@@ -72,7 +76,6 @@ class SetupProfileViewController: UIViewController {
 // MARK: - Setup constraints
 extension SetupProfileViewController {
     private func setupConstraints() {
-        phoneNumberFiled.text = "+374"
         let fullNameStackView = UIStackView(arrangedSubviews: [fullNameLabel,fullNameTextField], axis: .vertical, spacing: 0)
         let phoneNumberStackView = UIStackView(arrangedSubviews: [phoneNumberLabel,phoneNumberFiled], axis: .vertical, spacing: 0)
         let aboutMeStackView = UIStackView(arrangedSubviews: [aboutMeLabel,aboutMeTextField], axis: .vertical, spacing: 0)

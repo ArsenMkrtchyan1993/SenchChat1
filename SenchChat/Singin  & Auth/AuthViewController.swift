@@ -20,6 +20,7 @@ class AuthViewController: UIViewController {
     
     let singUpVC = SingUpViewController()
     let loginVC = LoginViewController()
+    let phoneVC = PhoneAuthViewController()
     let googleButton = UIButton(title: "Google", titleColor: .black, backgroundColor: .white,  isShadow: true)
     let phoneButton = UIButton(title: "Phone", titleColor: .butonGreen, backgroundColor: .white, isShadow: true)
     let emailButton = UIButton(title: "Email", titleColor: .white, backgroundColor: .buttonDark(), isShadow: false)
@@ -38,6 +39,7 @@ class AuthViewController: UIViewController {
         emailButton.addTarget(self, action: #selector(emailButtonTapped), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         googleButton.addTarget(self, action: #selector(googleButtonTapped), for: .touchUpInside)
+        phoneButton.addTarget(self, action: #selector(phoneButtonTapped), for: .touchUpInside)
         
     }
     
@@ -48,6 +50,9 @@ class AuthViewController: UIViewController {
     }
     @objc private func loginButtonTapped() {
         present(loginVC, animated: true, completion: nil)
+    }
+    @objc private func phoneButtonTapped() {
+        present(phoneVC, animated: true, completion: nil)
     }
     
     @objc private func googleButtonTapped() {

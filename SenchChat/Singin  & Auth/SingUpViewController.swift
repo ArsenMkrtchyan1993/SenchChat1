@@ -77,12 +77,11 @@ class SingUpViewController: UIViewController {
 
 extension SingUpViewController {
     private func setupConstraints() {
-        // by my secure text
         
         passwordTextField.textContentType = .password
         passwordTextField.isSecureTextEntry = true
-        //
-        
+        confirmPasswordTextFiled.textContentType = .password
+        confirmPasswordTextFiled.isSecureTextEntry = true
         let emailStackView = UIStackView(arrangedSubviews: [emailLabel,emailTextField],axis: .vertical,spacing: 0)
         let passwordStackView = UIStackView(arrangedSubviews: [passwordLabel,passwordTextField],axis: .vertical,spacing: 0)
         let confirmPasswordStackView = UIStackView(arrangedSubviews: [confirmPasswordLabel,confirmPasswordTextFiled],axis: .vertical,spacing: 0)

@@ -10,6 +10,7 @@
 		04F44103CEE8E30154A8ABF7 /* Pods_SenchChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A88C971A0F4A35A3992851A /* Pods_SenchChatTests.framework */; };
 		B77292F184428E0E4C39E383 /* Pods_SenchChat_SenchChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86BAE4427EA1DCA919D08DC5 /* Pods_SenchChat_SenchChatUITests.framework */; };
 		EEFB2E2B44DB3EED352D0D40 /* Pods_SenchChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0310B7322541967BF9A27BE /* Pods_SenchChat.framework */; };
+		F314F16C27DF350E00897334 /* PhoneAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F314F16B27DF350E00897334 /* PhoneAuthViewController.swift */; };
 		F32B296527D902740030999D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B296427D902740030999D /* AuthService.swift */; };
 		F32B296727D918F90030999D /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B296627D918F90030999D /* Validators.swift */; };
 		F32B296927D91C3B0030999D /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B296827D91C3B0030999D /* AuthError.swift */; };
@@ -87,6 +88,7 @@
 		86BAE4427EA1DCA919D08DC5 /* Pods_SenchChat_SenchChatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SenchChat_SenchChatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB47976ED8FAFDEDF16B0AF4 /* Pods-SenchChat-SenchChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SenchChat-SenchChatUITests.release.xcconfig"; path = "Target Support Files/Pods-SenchChat-SenchChatUITests/Pods-SenchChat-SenchChatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F0310B7322541967BF9A27BE /* Pods_SenchChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SenchChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F314F16B27DF350E00897334 /* PhoneAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthViewController.swift; sourceTree = "<group>"; };
 		F32B296427D902740030999D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F32B296627D918F90030999D /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
 		F32B296827D91C3B0030999D /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				F3EB987927C6747D0013DCF6 /* SingUpViewController.swift */,
 				F3436C8427C6A98E004A65C3 /* LoginViewController.swift */,
 				F3B59F7527C77FDB009D7F96 /* SetupProfileViewController.swift */,
+				F314F16B27DF350E00897334 /* PhoneAuthViewController.swift */,
 			);
 			path = "Singin  & Auth";
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				F32B296727D918F90030999D /* Validators.swift in Sources */,
 				F3EB987E27C67F050013DCF6 /* UIStackView + Extension.swift in Sources */,
 				F3E0542827D3EA4600F2346E /* UIViewController + Extension.swift in Sources */,
+				F314F16C27DF350E00897334 /* PhoneAuthViewController.swift in Sources */,
 				F3CC4A4027C9316E002CD8A0 /* PeopleViewController.swift in Sources */,
 				F3EB986F27C5650E0013DCF6 /* UIColor + Extension.swift in Sources */,
 				F3EB986D27C4E8F80013DCF6 /* UIFont + Extension.swift in Sources */,
