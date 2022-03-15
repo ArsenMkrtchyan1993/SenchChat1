@@ -10,7 +10,7 @@ import UIKit
 class PhoneAuthViewController: UIViewController {
     
     let welcomeLabel = UILabel(title: "Please enter you phone number!", font: .avenir26())
-    let phoneNumberLabel = UILabel(title: "Phone number white + region ")
+    let phoneNumberLabel = UILabel(title: "Phone number white region code")
     let smsCodeLabel = UILabel(title: "Enter code")
     let singIpButton = UIButton(title: "Sign In", titleColor: .white, backgroundColor: .buttonDark(), isShadow: false)
     
@@ -86,7 +86,8 @@ extension PhoneAuthViewController {
     private func setupConstraints() {
         
         phoneNumberTextField.textContentType = .telephoneNumber
-        smsCodeTextField.textContentType = .flightNumber
+        smsCodeTextField.keyboardType = .numberPad
+        
         phoneNumberTextField.text = "+"
         phoneNumberTextField.returnKeyType = .continue
    

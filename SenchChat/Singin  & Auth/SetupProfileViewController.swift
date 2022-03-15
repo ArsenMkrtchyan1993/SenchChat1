@@ -50,10 +50,18 @@ class SetupProfileViewController: UIViewController {
        
     }
     @objc private func plusButtonTappet() {
-        let imagePickerController =  UIImagePickerController()
-        imagePickerController.delegate = self
-        imagePickerController.sourceType = .photoLibrary
-        present(imagePickerController, animated: true, completion: nil)
+        let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+                alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+                    self.openCamera()
+                }))
+
+                alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
+                    self.openGallery()
+                }))
+
+                alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+
+                self.present(alert, animated: true, completion: nil)
     }
     @objc private func goToChatsButtonTappet() {
        
@@ -82,9 +90,51 @@ class SetupProfileViewController: UIViewController {
 
 }
 
+// MARK: - Photo source type
+
+
+extension SetupProfileViewController {
+    private func openCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        else
+        {
+            let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
+    private func openGallery() {
+       if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
+           let imagePicker = UIImagePickerController()
+           imagePicker.delegate = self
+           imagePicker.allowsEditing = true
+           imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+           self.present(imagePicker, animated: true, completion: nil)
+       }
+       else
+       {
+           let alert  = UIAlertController(title: "Warning", message: "You don't have permission to access gallery.", preferredStyle: .alert)
+           alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+           self.present(alert, animated: true, completion: nil)
+       }
+   }
+}
+
+
 // MARK: - Setup constraints
 extension SetupProfileViewController {
     private func setupConstraints() {
+        phoneNumberFiled.text  = "+"
+        phoneNumberFiled.keyboardType = .numberPad
+        
         let fullNameStackView = UIStackView(arrangedSubviews: [fullNameLabel,fullNameTextField], axis: .vertical, spacing: 0)
         let phoneNumberStackView = UIStackView(arrangedSubviews: [phoneNumberLabel,phoneNumberFiled], axis: .vertical, spacing: 0)
         let aboutMeStackView = UIStackView(arrangedSubviews: [aboutMeLabel,aboutMeTextField], axis: .vertical, spacing: 0)
@@ -127,7 +177,7 @@ extension SetupProfileViewController {
 // MARK: - UIImagePickerController Delegate
 extension SetupProfileViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        picker.dismiss(animated: true, completion: nil )
+        picker.dismiss(animated: true, completion: nil)
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
         fillImageView.circleImageView.image = image
     }
