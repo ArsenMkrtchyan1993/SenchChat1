@@ -22,14 +22,16 @@ class SetupProfileViewController: UIViewController {
     let goToChatsButton = UIButton(title: "Go to chats!", titleColor: .white, backgroundColor: .buttonDark(), isShadow: false)
     
     private var currentUser: User
+    
         init(currentUser: User){
             self.currentUser = currentUser
             super.init(nibName: nil, bundle: nil)
             if let username = currentUser.displayName {
                 fullNameTextField.text = username
             }
-            if let userNumber = currentUser.phoneNumber {
-                phoneNumberLabel.text = userNumber
+            if let userPhone = currentUser.phoneNumber{
+                phoneNumberFiled.text = userPhone
+                phoneNumberFiled.isEnabled = false
             }
             //TODO set google image
         }
