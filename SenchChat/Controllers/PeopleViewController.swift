@@ -7,11 +7,13 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class PeopleViewController: UIViewController {
     private let currentUser: MUser
-    //let users = Bundle.main.decode([MUser].self, from: "users.json")
-    let users = [MUser]()
+    var usersListener: ListenerRegistration?
+    
+    var users = [MUser]()
     var collectionView: UICollectionView!
     var dataSource:UICollectionViewDiffableDataSource<Section,MUser>!
     
@@ -30,7 +32,9 @@ class PeopleViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         title = currentUser.userName
     }
-     
+    deinit {
+        usersListener?.remove()
+    }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -40,14 +44,22 @@ class PeopleViewController: UIViewController {
         setupSearchBar()
         setupCollectionView()
         createDataSource()
-        reloadData(whit: nil)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(singOut))
         navigationItem.rightBarButtonItem?.tintColor = .systemBlue
+        usersListener = ListenerService.shared.usersObserve(users: users, completion: { result in
+            switch result {
+                
+            case .success(let users):
+                self.users = users
+                self.reloadData(whit: nil)
+            case .failure(let error):
+                self.showAlert(title: "Error", message: error.localizedDescription)
+            }
+        })
         }
     
     
     @objc private func singOut() {
-        
         let ac = UIAlertController(title: nil, message: "Are you sure that you wont to sing out", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         ac.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { _ in

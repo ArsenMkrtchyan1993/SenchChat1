@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 
 class UserCell: UICollectionViewCell,SelfConfiguringCell {
     
@@ -37,13 +37,16 @@ class UserCell: UICollectionViewCell,SelfConfiguringCell {
         self.containerView.layer.cornerRadius = 4
         self.containerView.clipsToBounds = true
     }
-    
+    override func prepareForReuse() {
+        userImageView.image = nil
+    }
     
     
      func configure<U>(whit value: U) where U : Hashable {
          guard let user: MUser  = value as? MUser else { return }
          userName.text = user.userName
-         userImageView.image = UIImage(named: user.avatarStringURL)
+         guard let url = URL(string: user.avatarStringURL) else { return }
+         userImageView.sd_setImage(with: url, completed: nil)
      }
   
     
@@ -51,7 +54,7 @@ class UserCell: UICollectionViewCell,SelfConfiguringCell {
         userName.translatesAutoresizingMaskIntoConstraints = false
         userImageView.translatesAutoresizingMaskIntoConstraints = false
         containerView.translatesAutoresizingMaskIntoConstraints = false
-        userImageView.backgroundColor = .orange
+        //userImageView.backgroundColor = .orange
    
         containerView.addSubview(userImageView)
         containerView.addSubview(userName)
@@ -76,10 +79,6 @@ class UserCell: UICollectionViewCell,SelfConfiguringCell {
         ])
 
     }
-    
- 
-    
-    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

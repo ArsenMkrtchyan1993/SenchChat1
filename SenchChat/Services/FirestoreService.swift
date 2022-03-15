@@ -50,10 +50,10 @@ import UIKit
         var mUser = MUser(userName: userName!,
                           phoneNumber: phoneNumber,
                           email: email,
-                          avatarStringURL: description!,
-                          sex: "not exist",
+                          avatarStringURL: "not exise",
+                          sex: sex!,
                           id: id,
-                          description:sex!)
+                          description:description!)
         StorageService.shared.upload(photo: avatarImage!) { result in
             switch result {
                 

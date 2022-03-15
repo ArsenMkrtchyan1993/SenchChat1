@@ -36,6 +36,24 @@ struct MUser: Hashable,Decodable{
         self.avatarStringURL = avatarStringURL
         self.phoneNumber = phoneNumber
     }
+    init?(document: QueryDocumentSnapshot)  {
+        let data = document.data()
+        guard let userName = data["userName"] as? String else { return nil }
+        guard let email = data["email"] as? String else { return nil }
+        guard let avatarStringURL = data["avatarStringURL"] as? String else { return nil }
+        guard let sex = data["sex"] as? String else { return nil }
+        guard let uid = data["uid"] as? String else { return nil }
+        guard let description = data["description"] as? String else { return nil }
+        guard let phoneNumber = data["phoneNumber"] as? String else { return nil }
+
+        self.userName = userName
+        self.email = email
+        self.id = uid
+        self.sex = sex
+        self.description = description
+        self.avatarStringURL = avatarStringURL
+        self.phoneNumber = phoneNumber
+    }
     
     init(userName: String,phoneNumber: String, email: String,avatarStringURL: String,sex: String,id: String,description: String) {
         self.userName = userName
