@@ -8,9 +8,10 @@
 import Foundation
 import FirebaseFirestore
 import Firebase
+import UIKit
 
  
-class FirestoreService {
+ class FirestoreService {
     
     static let shared = FirestoreService()
     let db = Firestore.firestore()
@@ -34,28 +35,41 @@ class FirestoreService {
         }
         
     }
-    func saveProfileWith(id: String, phoneNumber: String,email: String,userName: String?,avatarImageString:String?,description:String?,sex: String?,completion: @escaping (Result<MUser,Error>) -> Void) {
+     
+    func saveProfileWith(id: String, phoneNumber: String,email: String,userName: String?,avatarImage:UIImage?,description:String?,sex: String?,completion: @escaping (Result<MUser,Error>) -> Void) {
         guard Validators.isFilled(userName: userName, description: description, sex: sex) else {
             completion(.failure(UserError.notFilled))
             return
         }
-        
-        let mUser = MUser(userName: userName!,
+        // check image 
+        guard avatarImage != #imageLiteral(resourceName: "avatar") else {
+            completion(.failure(UserError.photoNotExist))
+            return
+        }
+                
+        var mUser = MUser(userName: userName!,
                           phoneNumber: phoneNumber,
                           email: email,
                           avatarStringURL: description!,
                           sex: "not exist",
                           id: id,
                           description:sex!)
-        
-        self.usersRef.document(mUser.id).setData(mUser.representation) { error in
-            if let error = error {
+        StorageService.shared.upload(photo: avatarImage!) { result in
+            switch result {
+                
+            case .success(let url):
+                mUser.avatarStringURL = url.absoluteString
+                self.usersRef.document(mUser.id).setData(mUser.representation) { error in
+                    if let error = error {
+                        completion(.failure(error))
+                    }else {
+                        completion(.success(mUser))
+                    }
+                }
+            case .failure(let error):
                 completion(.failure(error))
-            }else {
-                completion(.success(mUser))
             }
-        }
-        
-    }
+        } //StorageService
+    }//saveProfileWith
     
 }

@@ -40,6 +40,8 @@
 		F3AD057E27D005F500FDF0A1 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = F3AD057C27D005F500FDF0A1 /* waitingChats.json */; };
 		F3B59F7627C77FDB009D7F96 /* SetupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B59F7527C77FDB009D7F96 /* SetupProfileViewController.swift */; };
 		F3B59F7827C78A88009D7F96 /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B59F7727C78A88009D7F96 /* AddPhotoView.swift */; };
+		F3B8D58127E0BF86009AF887 /* StorageServiceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B8D58027E0BF86009AF887 /* StorageServiceImage.swift */; };
+		F3B8D58327E0C43C009AF887 /* UIImage + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B8D58227E0C43C009AF887 /* UIImage + extension.swift */; };
 		F3BDAC5127D10806008F977B /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BDAC5027D10806008F977B /* ActiveChatCell.swift */; };
 		F3CC4A3C27C93056002CD8A0 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CC4A3B27C93056002CD8A0 /* MainTabBarController.swift */; };
 		F3CC4A3E27C93127002CD8A0 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CC4A3D27C93127002CD8A0 /* ListViewController.swift */; };
@@ -122,6 +124,8 @@
 		F3AD057C27D005F500FDF0A1 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = waitingChats.json; path = "../../../../mp3/[SwiftBook] Программирование на Swift/28. Курс По Мессенджеру IChat/17. Cell GradientView/17. урок/IChat/Extensions/UIKIt/waitingChats.json"; sourceTree = "<group>"; };
 		F3B59F7527C77FDB009D7F96 /* SetupProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewController.swift; sourceTree = "<group>"; };
 		F3B59F7727C78A88009D7F96 /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
+		F3B8D58027E0BF86009AF887 /* StorageServiceImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceImage.swift; sourceTree = "<group>"; };
+		F3B8D58227E0C43C009AF887 /* UIImage + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + extension.swift"; sourceTree = "<group>"; };
 		F3BDAC5027D10806008F977B /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
 		F3CC4A3B27C93056002CD8A0 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		F3CC4A3D27C93127002CD8A0 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +203,7 @@
 			children = (
 				F3E0542427D39C1900F2346E /* Models */,
 				F32B296427D902740030999D /* AuthService.swift */,
+				F3B8D58027E0BF86009AF887 /* StorageServiceImage.swift */,
 				F39D298227DA380000140C5E /* FirestoreService.swift */,
 			);
 			path = Services;
@@ -346,6 +351,7 @@
 				F3EB987227C56AA60013DCF6 /* UIImageView + Extension.swift */,
 				F349A87727C8D5090028260D /* SegmentedControl + Extension.swift */,
 				F3EB986C27C4E8F80013DCF6 /* UIFont + Extension.swift */,
+				F3B8D58227E0C43C009AF887 /* UIImage + extension.swift */,
 				F3EB987D27C67F050013DCF6 /* UIStackView + Extension.swift */,
 				F3EB986A27C4E1630013DCF6 /* UIButton + Extenion.swift */,
 				F3EB987027C569050013DCF6 /* UILable + Extension.swift */,
@@ -641,12 +647,14 @@
 				F3B59F7827C78A88009D7F96 /* AddPhotoView.swift in Sources */,
 				F3EB986B27C4E1630013DCF6 /* UIButton + Extenion.swift in Sources */,
 				F3554FDD27C393FB00B28BA3 /* SceneDelegate.swift in Sources */,
+				F3B8D58127E0BF86009AF887 /* StorageServiceImage.swift in Sources */,
 				F3CC4A3C27C93056002CD8A0 /* MainTabBarController.swift in Sources */,
 				F39BF7CE27D24317005A9FB7 /* WaitingChatCell.swift in Sources */,
 				F3FC436627D766ED0079936E /* ChatRequestViewController.swift in Sources */,
 				F32B296527D902740030999D /* AuthService.swift in Sources */,
 				F32B296927D91C3B0030999D /* AuthError.swift in Sources */,
 				F363CEFB27D511F500DB6473 /* UIView + Extension.swift in Sources */,
+				F3B8D58327E0C43C009AF887 /* UIImage + extension.swift in Sources */,
 				F3EB987A27C6747D0013DCF6 /* SingUpViewController.swift in Sources */,
 				F3E0542127D39A4200F2346E /* MUser.swift in Sources */,
 				F3BDAC5127D10806008F977B /* ActiveChatCell.swift in Sources */,

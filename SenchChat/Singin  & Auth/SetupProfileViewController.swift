@@ -46,15 +46,22 @@ class SetupProfileViewController: UIViewController {
         view.backgroundColor = .white
         setupConstraints()
         goToChatsButton.addTarget(self, action: #selector(goToChatsButtonTappet), for: .touchUpInside)
+        fillImageView.plusButton.addTarget(self, action: #selector(plusButtonTappet), for: .touchUpInside)
+       
     }
-    
+    @objc private func plusButtonTappet() {
+        let imagePickerController =  UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .photoLibrary
+        present(imagePickerController, animated: true, completion: nil)
+    }
     @objc private func goToChatsButtonTappet() {
        
         FirestoreService.shared.saveProfileWith(id: currentUser.uid,
                                                 phoneNumber:phoneNumberFiled.text!,
                                                 email: currentUser.email ?? "",
                                                 userName: fullNameTextField.text,
-                                                avatarImageString: "nil",
+                                                avatarImage:fillImageView.circleImageView.image,
                                                 description: aboutMeTextField.text,
                                                 sex: sexSegmentControl.titleForSegment(at: sexSegmentControl.selectedSegmentIndex)) { result in
             switch result {
@@ -117,6 +124,15 @@ extension SetupProfileViewController {
         
     }
 }
+// MARK: - UIImagePickerController Delegate
+extension SetupProfileViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil )
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        fillImageView.circleImageView.image = image
+    }
+}
+
 
 // MARK: - SwiftUI
 import SwiftUI

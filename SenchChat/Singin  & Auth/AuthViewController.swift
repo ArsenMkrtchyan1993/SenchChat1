@@ -10,6 +10,7 @@ import GoogleSignIn
 import FirebaseAuth
 import Firebase
 
+
 class AuthViewController: UIViewController {
     
     let logoImageView = UIImageView(image: #imageLiteral(resourceName: "Logo"), contentMode: .scaleAspectFit)
@@ -25,8 +26,6 @@ class AuthViewController: UIViewController {
     let phoneButton = UIButton(title: "Phone", titleColor: .butonGreen, backgroundColor: .white, isShadow: true)
     let emailButton = UIButton(title: "Email", titleColor: .white, backgroundColor: .buttonDark(), isShadow: false)
     let loginButton = UIButton(title: "Login", titleColor: .buttonRed(), backgroundColor: .white, isShadow: true)
-    
- 
     
     override func viewDidLoad() {
         super.viewDidLoad()
