@@ -11,8 +11,8 @@ class ListViewController: UIViewController {
     var collectionView: UICollectionView!
     var dataSource:UICollectionViewDiffableDataSource<Section,MChat>?
     private let currentUser: MUser
-    let activeChats = Bundle.main.decode([MChat].self, from: "activeChats.json")
-    let waitingChats = Bundle.main.decode([MChat].self, from: "waitingChats.json")
+    let activeChats = [MChat]()
+    let waitingChats = [MChat]()
     
     enum Section: Int, CaseIterable {
         case waitingChats

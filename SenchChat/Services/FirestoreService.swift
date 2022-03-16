@@ -15,7 +15,7 @@ import UIKit
     
     static let shared = FirestoreService()
     let db = Firestore.firestore()
-    
+    var currentUser: MUser!
     private var usersRef: CollectionReference {
         return db.collection("users")
     }
@@ -28,6 +28,7 @@ import UIKit
                     completion(.failure(UserError.canNotUnwrapMUser))
                     return
                 }
+                self.currentUser = mUser
                 completion(.success(mUser))
             } else {
                 completion(.failure(UserError.conNotGetUserInfo))
@@ -71,5 +72,28 @@ import UIKit
             }
         } //StorageService
     }//saveProfileWith
+     
+     func createWaitingChat(message: String, receiver: MUser,completion: @escaping (Result<Void,Error>) -> Void) {
+         
+         let reference = db.collection(["users",receiver.id,"waitingChats"].joined(separator: "/"))
+         let messageRef = reference.document(self.currentUser.id).collection("messages")
+         let message = MMessage(user: currentUser, content: message)
+         
+         let chat = MChat(friendUserName: currentUser.userName, friendImageString: currentUser.avatarStringURL, lastMessage:message.content, friendId: currentUser.id)
+         reference.document(currentUser.id).setData(chat.representation) { error in
+             if let error = error {
+                 completion(.failure(error))
+                 return
+             }
+             messageRef.addDocument(data: message.representation) { error in
+                 if let error = error {
+                     completion(.failure(error))
+                     return
+                 }
+                completion(.success(Void()))
+             }
+             
+         }
+     }
     
 }

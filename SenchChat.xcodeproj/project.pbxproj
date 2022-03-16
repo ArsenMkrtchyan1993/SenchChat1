@@ -43,6 +43,8 @@
 		F3B8D58127E0BF86009AF887 /* StorageServiceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B8D58027E0BF86009AF887 /* StorageServiceImage.swift */; };
 		F3B8D58327E0C43C009AF887 /* UIImage + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B8D58227E0C43C009AF887 /* UIImage + extension.swift */; };
 		F3B8D58527E0F21A009AF887 /* ListenerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B8D58427E0F21A009AF887 /* ListenerService.swift */; };
+		F3B8D58727E2104B009AF887 /* UIApplication + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B8D58627E2104B009AF887 /* UIApplication + extension.swift */; };
+		F3B8D58927E2154B009AF887 /* MMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B8D58827E2154B009AF887 /* MMessage.swift */; };
 		F3BDAC5127D10806008F977B /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BDAC5027D10806008F977B /* ActiveChatCell.swift */; };
 		F3CC4A3C27C93056002CD8A0 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CC4A3B27C93056002CD8A0 /* MainTabBarController.swift */; };
 		F3CC4A3E27C93127002CD8A0 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CC4A3D27C93127002CD8A0 /* ListViewController.swift */; };
@@ -128,6 +130,8 @@
 		F3B8D58027E0BF86009AF887 /* StorageServiceImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceImage.swift; sourceTree = "<group>"; };
 		F3B8D58227E0C43C009AF887 /* UIImage + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + extension.swift"; sourceTree = "<group>"; };
 		F3B8D58427E0F21A009AF887 /* ListenerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenerService.swift; sourceTree = "<group>"; };
+		F3B8D58627E2104B009AF887 /* UIApplication + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication + extension.swift"; sourceTree = "<group>"; };
+		F3B8D58827E2154B009AF887 /* MMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMessage.swift; sourceTree = "<group>"; };
 		F3BDAC5027D10806008F977B /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
 		F3CC4A3B27C93056002CD8A0 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		F3CC4A3D27C93127002CD8A0 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -338,6 +342,7 @@
 			children = (
 				F3E0542027D39A4200F2346E /* MUser.swift */,
 				F3E0542227D39A6B00F2346E /* MChat.swift */,
+				F3B8D58827E2154B009AF887 /* MMessage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -357,6 +362,7 @@
 				F3B8D58227E0C43C009AF887 /* UIImage + extension.swift */,
 				F3EB987D27C67F050013DCF6 /* UIStackView + Extension.swift */,
 				F3EB986A27C4E1630013DCF6 /* UIButton + Extenion.swift */,
+				F3B8D58627E2104B009AF887 /* UIApplication + extension.swift */,
 				F3EB987027C569050013DCF6 /* UILable + Extension.swift */,
 			);
 			path = UIKit;
@@ -654,6 +660,7 @@
 				F3B8D58127E0BF86009AF887 /* StorageServiceImage.swift in Sources */,
 				F3CC4A3C27C93056002CD8A0 /* MainTabBarController.swift in Sources */,
 				F39BF7CE27D24317005A9FB7 /* WaitingChatCell.swift in Sources */,
+				F3B8D58927E2154B009AF887 /* MMessage.swift in Sources */,
 				F3FC436627D766ED0079936E /* ChatRequestViewController.swift in Sources */,
 				F32B296527D902740030999D /* AuthService.swift in Sources */,
 				F32B296927D91C3B0030999D /* AuthError.swift in Sources */,
@@ -663,6 +670,7 @@
 				F3E0542127D39A4200F2346E /* MUser.swift in Sources */,
 				F3BDAC5127D10806008F977B /* ActiveChatCell.swift in Sources */,
 				F3554FE527C393FB00B28BA3 /* SenchChat.xcdatamodeld in Sources */,
+				F3B8D58727E2104B009AF887 /* UIApplication + extension.swift in Sources */,
 				F349A87827C8D50A0028260D /* SegmentedControl + Extension.swift in Sources */,
 				F3E0542327D39A6B00F2346E /* MChat.swift in Sources */,
 			);
