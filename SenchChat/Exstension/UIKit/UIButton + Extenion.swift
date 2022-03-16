@@ -41,5 +41,18 @@ extension UIButton {
         googleImage.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
     
+    
+    func customizePhoneButton() {
+        let image = UIImage(systemName: "phone")
+        image!.withTintColor(.butonGreen)
+        let phoneImage = UIImageView(image: image, contentMode: .scaleAspectFit)
+        phoneImage.setupColor(color: .butonGreen)
+        
+        phoneImage.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(phoneImage)
+        phoneImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24).isActive = true
+        phoneImage.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+    }
+    
    
 }

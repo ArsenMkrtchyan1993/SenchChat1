@@ -7,41 +7,36 @@
 
 import UIKit
 
-struct MChat:Hashable,Decodable {
-    
-    var username:String
-    var userImageString:String
-    var lastMessage:String
-    var id: Int
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-    static func == (lhs: MChat, rhs: MChat) -> Bool {
-        return lhs.id == rhs.id
-    }
-    
-    private func getImage(name:String) -> UIImage {
-        guard let image = UIImage(named: name) else {
-            return #imageLiteral(resourceName: "avatar")
-        }
-        return image
-    }
-}
-
-
 class ListViewController: UIViewController {
     var collectionView: UICollectionView!
     var dataSource:UICollectionViewDiffableDataSource<Section,MChat>?
-    
+    private let currentUser: MUser
     let activeChats = Bundle.main.decode([MChat].self, from: "activeChats.json")
     let waitingChats = Bundle.main.decode([MChat].self, from: "waitingChats.json")
     
     enum Section: Int, CaseIterable {
         case waitingChats
         case activeChats
+        
+        
+        func description() -> String {
+            switch self {
+            case .waitingChats:
+                return "Waiting chats"
+            case .activeChats:
+                return "Active chats"
+            }
+        }
     }
-    
+    init(currentUser: MUser){
+        self.currentUser = currentUser
+        super.init(nibName: nil, bundle: nil)
+        title = currentUser.userName
+    }
+     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchBar()
@@ -68,9 +63,9 @@ class ListViewController: UIViewController {
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.backgroundColor = .mainWhite()
         view.addSubview(collectionView)
+        collectionView.register(SectionHeader.self, forSupplementaryViewOfKind:UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseId)
         collectionView.register(ActiveChatCell.self, forCellWithReuseIdentifier: ActiveChatCell.reuseId)
-      
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellid2")
+        collectionView.register(WaitingChatCell.self, forCellWithReuseIdentifier: WaitingChatCell.reuseId)
     }
     
     private func reloadData() {
@@ -87,13 +82,7 @@ class ListViewController: UIViewController {
 }
 // MARK: - Data Source
 extension ListViewController {
-    
-    private func configure<T: SelfConfiguringCell>(cellType: T.Type,white value: MChat, for indexPath: IndexPath) -> T {
-        guard let cell = collectionView
-                .dequeueReusableCell(withReuseIdentifier: cellType.reuseId, for: indexPath) as? T else { fatalError("cant cost  \(cellType)")}
-        cell.configure(whit: value)
-        return cell
-    }
+  
     
     
     private func createDataSource() {
@@ -104,17 +93,30 @@ extension ListViewController {
             
             switch section {
             case .activeChats:
-                return self.configure(cellType: ActiveChatCell.self, white: chat, for: indexPath)
+                return self.configure(collectionView: collectionView, cellType: ActiveChatCell.self, white: chat, for: indexPath)         
             case .waitingChats:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid2", for: indexPath)
-                cell.backgroundColor = .systemRed
-                return cell
+                return self.configure(collectionView: collectionView, cellType: WaitingChatCell.self, white: chat, for: indexPath)
             }
         })
+        
+        dataSource?.supplementaryViewProvider = {
+            collectionView, kind,indexPath in
+            
+            guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeader.reuseId, for: indexPath)  as? SectionHeader else {
+                    fatalError("Cant create new section header")
+                
+            }
+                guard let section = Section(rawValue: indexPath.section) else {
+                    fatalError("Cant create new section header")
+                     }
+            sectionHeader.configure(text: section.description(), font: . laoSangamMN20(), color:.headerColor)
+                                    
+            return sectionHeader
+            }
+        }
     }
-}
 
-// MARK: - Setup Leyout
+// MARK: - Setup Layout
 
 extension ListViewController {
     
@@ -133,6 +135,10 @@ extension ListViewController {
                 return self.createWaitingChats()
             }
         }
+        
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+        config.interSectionSpacing = 20
+        layout.configuration = config
         return layout
     }
     
@@ -150,6 +156,10 @@ extension ListViewController {
         section.interGroupSpacing = 20
         section.contentInsets = NSDirectionalEdgeInsets.init(top: 16, leading: 20, bottom: 0, trailing: 20)
         section.orthogonalScrollingBehavior = .continuous
+        
+        let sectionHeader = createSectionHeader()
+        
+        section.boundarySupplementaryItems = [sectionHeader]
         return section
     }
     
@@ -165,7 +175,17 @@ extension ListViewController {
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 10
         section.contentInsets = NSDirectionalEdgeInsets.init(top: 16, leading: 20, bottom: 0, trailing: 20)
+        let sectionHeader = createSectionHeader()
+        
+        section.boundarySupplementaryItems = [sectionHeader]
+        
         return section
+    }
+    
+    private func createSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+        let sectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(1))
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: sectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        return sectionHeader
     }
 }
 
