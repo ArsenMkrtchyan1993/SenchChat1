@@ -14,10 +14,11 @@ class ListViewController: UIViewController {
     var collectionView: UICollectionView!
     var dataSource:UICollectionViewDiffableDataSource<Section,MChat>?
     private let currentUser: MUser
-    let activeChats = [MChat]()
+    var activeChats = [MChat]()
     
     var waitingChats = [MChat]()
     private var waitingChatsListener: ListenerRegistration?
+    private var activeChatsListener: ListenerRegistration?
     
     enum Section: Int, CaseIterable {
         case waitingChats
@@ -43,6 +44,7 @@ class ListViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,7 +53,7 @@ class ListViewController: UIViewController {
         createDataSource()
         reloadData()
         
-        waitingChatsListener = ListenerService.shared.waitingChatsObserve(chats: activeChats, completion: { result in
+        waitingChatsListener = ListenerService.shared.waitingChatsObserve(chats: waitingChats, completion: { result in
             switch result {
             case .success(let chats):
                 //if  chats.count == 0  { return }
@@ -68,6 +70,16 @@ class ListViewController: UIViewController {
                 self.showAlert(title: "error", message: error.localizedDescription)
             }
         })
+        activeChatsListener = ListenerService.shared.activeChatsObserve(chats: activeChats, completion: { result in
+            switch result {
+                
+            case .success(let chats):
+                self.activeChats = chats
+                self.reloadData()
+            case .failure(let error):
+                self.showAlert(title: "error", message: error.localizedDescription)
+            }
+        })
         
         
     }
@@ -75,6 +87,7 @@ class ListViewController: UIViewController {
     
     
     deinit {
+        waitingChatsListener?.remove()
         waitingChatsListener?.remove()
     }
     
@@ -148,10 +161,16 @@ extension ListViewController: WaitingChatNavigation {
     }
     
     func chatToActive(chat: MChat) {
-        print("hi")
+        FirestoreService.shared.changeToActive(chat: chat) { result in
+            switch result {
+                
+            case .success():
+                self.showAlert(title: "Good", message:"Have a nice chat")
+            case .failure(let error):
+                self.showAlert(title: "Error", message: error.localizedDescription)
+            }
+        }
     }
-    
-    
 }
 
 

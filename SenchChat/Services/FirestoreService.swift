@@ -19,13 +19,14 @@ import UIKit
     private var usersRef: CollectionReference {
         return db.collection("users")
     }
-     private var waitingChatRef: CollectionReference {
+    private var waitingChatRef: CollectionReference {
          return db.collection(["users",currentUser.id,"waitingChats"].joined(separator: "/"))
      }
+    private var activeChatRef: CollectionReference {
+         return db.collection(["users",currentUser.id,"activeChats"].joined(separator: "/"))
+     }
      
-     
-     
-     
+   
     func getUserData(user: User, completion: @escaping (Result<MUser,Error>) -> Void) {
         
         let docRef = usersRef.document(user.uid)
@@ -150,5 +151,53 @@ import UIKit
              completion(.success(messages))
          }
      }
-    
+     
+     func changeToActive(chat: MChat, completion: @escaping (Result<Void,Error>) -> Void) {
+         getWaitingChatsMessage(chat: chat) { result in
+             switch result {
+                 
+             case .success(let messages):
+                 self.deleteWaitingChat(chat: chat) { result in
+                     switch result{
+                     case .success():
+                         self.createActiveChat(chat: chat, messages: messages) { result in
+                             switch result {
+                             case .success():
+                                 completion(.success(Void()))
+                             case .failure(let error):
+                                 completion(.failure(error))
+                             }
+                         }
+                     case .failure(let error):
+                         completion(.failure(error))
+                     }
+                 }
+             case .failure(let error):
+                 completion(.failure(error))
+             }
+         }
+     }
+     
+     
+     
+     func createActiveChat(chat: MChat,messages: [MMessage],completion: @escaping (Result<Void,Error>) -> Void){
+         let messageRef = activeChatRef.document(chat.friendId).collection("messages")
+         activeChatRef.document(chat.friendId).setData(chat.representation) { error in
+             if let error = error {
+                 completion(.failure(error))
+                 return
+             }
+             for message in messages {
+                 messageRef.addDocument(data: message.representation) { error in
+                     if let error = error {
+                         completion(.failure(error))
+                         return
+                     }
+                     completion(.success(Void()))
+                 }
+             }
+         }
+     
 }
+     
+ }
