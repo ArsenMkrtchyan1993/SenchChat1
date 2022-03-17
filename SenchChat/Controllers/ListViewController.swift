@@ -6,13 +6,18 @@
 //
 
 import UIKit
+import FirebaseFirestore
+
+
 
 class ListViewController: UIViewController {
     var collectionView: UICollectionView!
     var dataSource:UICollectionViewDiffableDataSource<Section,MChat>?
     private let currentUser: MUser
     let activeChats = [MChat]()
-    let waitingChats = [MChat]()
+    
+    var waitingChats = [MChat]()
+    private var waitingChatsListener: ListenerRegistration?
     
     enum Section: Int, CaseIterable {
         case waitingChats
@@ -28,6 +33,7 @@ class ListViewController: UIViewController {
             }
         }
     }
+    
     init(currentUser: MUser){
         self.currentUser = currentUser
         super.init(nibName: nil, bundle: nil)
@@ -39,11 +45,37 @@ class ListViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupSearchBar()
         setupCollectionView()
         createDataSource()
         reloadData()
         
+        waitingChatsListener = ListenerService.shared.waitingChatsObserve(chats: activeChats, completion: { result in
+            switch result {
+            case .success(let chats):
+                //if  chats.count == 0  { return }
+                // to do
+                
+                if self.waitingChats != [], self.waitingChats.count < chats.count {
+                    let chatRequestVC = ChatRequestViewController(chat: chats.last!)
+                    chatRequestVC.delegate = self
+                    self.present(chatRequestVC, animated: true, completion: nil)
+                }
+                self.waitingChats = chats
+                self.reloadData()
+            case .failure(let error):
+                self.showAlert(title: "error", message: error.localizedDescription)
+            }
+        })
+        
+        
+    }
+    
+    
+    
+    deinit {
+        waitingChatsListener?.remove()
     }
     
     private func setupSearchBar() {
@@ -66,20 +98,63 @@ class ListViewController: UIViewController {
         collectionView.register(SectionHeader.self, forSupplementaryViewOfKind:UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseId)
         collectionView.register(ActiveChatCell.self, forCellWithReuseIdentifier: ActiveChatCell.reuseId)
         collectionView.register(WaitingChatCell.self, forCellWithReuseIdentifier: WaitingChatCell.reuseId)
+        collectionView.delegate = self
     }
     
     private func reloadData() {
         var snapshot = NSDiffableDataSourceSnapshot<Section, MChat>()
-        
         snapshot.appendSections([.waitingChats, .activeChats])
-        
         snapshot.appendItems(waitingChats, toSection: .waitingChats)
         snapshot.appendItems(activeChats, toSection: .activeChats)
-
         dataSource?.apply(snapshot, animatingDifferences: true)
     }
 
 }
+
+
+// MARK: - UICollectionViewDelegate
+
+extension ListViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let chat = self.dataSource!.itemIdentifier(for: indexPath) else { return }
+        guard let section = Section(rawValue: indexPath.section) else { return }
+        switch section {
+        case .waitingChats:
+            let chatRequestVC = ChatRequestViewController(chat: chat)
+            chatRequestVC.delegate = self
+            present(chatRequestVC, animated: true, completion: nil)
+        case .activeChats:
+            print("Ds")
+        }
+        
+    }
+}
+
+
+// MARK: - WaitingChatNavigation
+
+extension ListViewController: WaitingChatNavigation {
+    func removeWaitingChat(chat: MChat) {
+        FirestoreService.shared.deleteWaitingChat(chat: chat) { result in
+            switch result {
+                
+            case .success():
+                self.showAlert(title: "Good", message: "Chat whit \(chat.friendUserName) was deleted")
+            case .failure(let error):
+                self.showAlert(title: "Error", message: error.localizedDescription)
+            }
+        }
+    }
+    
+    func chatToActive(chat: MChat) {
+        print("hi")
+    }
+    
+    
+}
+
+
 // MARK: - Data Source
 extension ListViewController {
   

@@ -19,6 +19,13 @@ import UIKit
     private var usersRef: CollectionReference {
         return db.collection("users")
     }
+     private var waitingChatRef: CollectionReference {
+         return db.collection(["users",currentUser.id,"waitingChats"].joined(separator: "/"))
+     }
+     
+     
+     
+     
     func getUserData(user: User, completion: @escaping (Result<MUser,Error>) -> Void) {
         
         let docRef = usersRef.document(user.uid)
@@ -93,6 +100,54 @@ import UIKit
                 completion(.success(Void()))
              }
              
+         }
+     }
+     
+     func deleteWaitingChat(chat: MChat,completion: @escaping (Result<Void,Error>) -> Void) {
+         waitingChatRef.document(chat.friendId).delete { error in
+             if let error = error {
+                 completion(.failure(error))
+                 return
+             }
+             completion(.success(Void()))
+             self.deleteMessage(chat: chat, completion: completion)
+         }
+     }
+     func deleteMessage(chat: MChat, completion: @escaping (Result<Void,Error>) -> Void) {
+         let reference = waitingChatRef.document(chat.friendId).collection("messages")
+         getWaitingChatsMessage(chat: chat) { result in
+             switch result {
+                 
+             case .success(let messages):
+                 for message in messages {
+                     guard let documentId = message.id else {return}
+                     let messageRef = reference.document(documentId)
+                     messageRef.delete { error in
+                         if let error = error {
+                             completion(.failure(error))
+                         }
+                         completion(.success(Void()))
+                     }
+                 }
+             case .failure(let error):
+                 completion(.failure(error))
+             }
+         }
+     }
+     
+     
+     func getWaitingChatsMessage(chat: MChat,completion: @escaping (Result<[MMessage],Error>) -> Void) {
+         let reference = waitingChatRef.document(chat.friendId).collection("messages")
+         var messages = [MMessage]()
+         reference.getDocuments { querySnapshot, error in
+             if let error = error {
+                 completion(.failure(error))
+             }
+             for document in querySnapshot!.documents {
+                 guard let message = MMessage(document: document) else { return }
+                 messages.append(message)
+             }
+             completion(.success(messages))
          }
      }
     

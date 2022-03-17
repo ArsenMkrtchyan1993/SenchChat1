@@ -45,6 +45,7 @@
 		F3B8D58527E0F21A009AF887 /* ListenerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B8D58427E0F21A009AF887 /* ListenerService.swift */; };
 		F3B8D58727E2104B009AF887 /* UIApplication + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B8D58627E2104B009AF887 /* UIApplication + extension.swift */; };
 		F3B8D58927E2154B009AF887 /* MMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B8D58827E2154B009AF887 /* MMessage.swift */; };
+		F3B8D58B27E32E99009AF887 /* WaitingChatNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B8D58A27E32E98009AF887 /* WaitingChatNavigation.swift */; };
 		F3BDAC5127D10806008F977B /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BDAC5027D10806008F977B /* ActiveChatCell.swift */; };
 		F3CC4A3C27C93056002CD8A0 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CC4A3B27C93056002CD8A0 /* MainTabBarController.swift */; };
 		F3CC4A3E27C93127002CD8A0 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CC4A3D27C93127002CD8A0 /* ListViewController.swift */; };
@@ -132,6 +133,7 @@
 		F3B8D58427E0F21A009AF887 /* ListenerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenerService.swift; sourceTree = "<group>"; };
 		F3B8D58627E2104B009AF887 /* UIApplication + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication + extension.swift"; sourceTree = "<group>"; };
 		F3B8D58827E2154B009AF887 /* MMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMessage.swift; sourceTree = "<group>"; };
+		F3B8D58A27E32E98009AF887 /* WaitingChatNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatNavigation.swift; sourceTree = "<group>"; };
 		F3BDAC5027D10806008F977B /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
 		F3CC4A3B27C93056002CD8A0 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		F3CC4A3D27C93127002CD8A0 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				F39BF7CF27D2489B005A9FB7 /* SelfConfiguringCell.swift */,
+				F3B8D58A27E32E98009AF887 /* WaitingChatNavigation.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				F3EB987827C647CE0013DCF6 /* ButtonFormView.swift in Sources */,
 				F39D298627DA3B0800140C5E /* UserError.swift in Sources */,
 				F3B59F7827C78A88009D7F96 /* AddPhotoView.swift in Sources */,
+				F3B8D58B27E32E99009AF887 /* WaitingChatNavigation.swift in Sources */,
 				F3EB986B27C4E1630013DCF6 /* UIButton + Extenion.swift in Sources */,
 				F3554FDD27C393FB00B28BA3 /* SceneDelegate.swift in Sources */,
 				F3B8D58127E0BF86009AF887 /* StorageServiceImage.swift in Sources */,

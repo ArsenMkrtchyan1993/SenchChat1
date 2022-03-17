@@ -57,6 +57,7 @@ class ProfileViewController: UIViewController {
     @objc private func sendMessage() {
         guard let message = myTextField.text, message != "" else { return }
         self.dismiss(animated: true) {
+            print(message)
             FirestoreService.shared.createWaitingChat(message: message,
                                                       receiver: self.user) { result in
                 switch result {
