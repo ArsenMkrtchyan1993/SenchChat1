@@ -28,6 +28,7 @@
 		F363CEF727D4F66000DB6473 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F363CEF627D4F66000DB6473 /* ProfileViewController.swift */; };
 		F363CEF927D507E400DB6473 /* InsertableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F363CEF827D507E400DB6473 /* InsertableTextField.swift */; };
 		F363CEFB27D511F500DB6473 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F363CEFA27D511F400DB6473 /* UIView + Extension.swift */; };
+		F37CC0BA27E3B87A0048486B /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37CC0B927E3B87A0048486B /* ChatsViewController.swift */; };
 		F383B5E627D8E1BE00524E15 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F383B5E527D8E1BE00524E15 /* GoogleService-Info.plist */; };
 		F39BF7CC27D23B6C005A9FB7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BF7CB27D23B6C005A9FB7 /* GradientView.swift */; };
 		F39BF7CE27D24317005A9FB7 /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BF7CD27D24317005A9FB7 /* WaitingChatCell.swift */; };
@@ -116,6 +117,7 @@
 		F363CEF627D4F66000DB6473 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F363CEF827D507E400DB6473 /* InsertableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertableTextField.swift; sourceTree = "<group>"; };
 		F363CEFA27D511F400DB6473 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		F37CC0B927E3B87A0048486B /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		F383B5E527D8E1BE00524E15 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Users/arsenmkrtchyan/Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F39BF7CB27D23B6C005A9FB7 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		F39BF7CD27D24317005A9FB7 /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				F3CC4A3F27C9316E002CD8A0 /* PeopleViewController.swift */,
 				F363CEF627D4F66000DB6473 /* ProfileViewController.swift */,
 				F3FC436527D766ED0079936E /* ChatRequestViewController.swift */,
+				F37CC0B927E3B87A0048486B /* ChatsViewController.swift */,
 				F3E0541C27D292E800F2346E /* Header */,
 				F3BDAC4F27D107EB008F977B /* Cell */,
 			);
@@ -642,6 +645,7 @@
 				F32B296727D918F90030999D /* Validators.swift in Sources */,
 				F3EB987E27C67F050013DCF6 /* UIStackView + Extension.swift in Sources */,
 				F3E0542827D3EA4600F2346E /* UIViewController + Extension.swift in Sources */,
+				F37CC0BA27E3B87A0048486B /* ChatsViewController.swift in Sources */,
 				F314F16C27DF350E00897334 /* PhoneAuthViewController.swift in Sources */,
 				F3CC4A4027C9316E002CD8A0 /* PeopleViewController.swift in Sources */,
 				F3EB986F27C5650E0013DCF6 /* UIColor + Extension.swift in Sources */,

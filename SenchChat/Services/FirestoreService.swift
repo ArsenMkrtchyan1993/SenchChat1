@@ -9,7 +9,6 @@ import Foundation
 import FirebaseFirestore
 import Firebase
 import UIKit
-
  
  class FirestoreService {
     
@@ -22,7 +21,7 @@ import UIKit
     private var waitingChatRef: CollectionReference {
          return db.collection(["users",currentUser.id,"waitingChats"].joined(separator: "/"))
      }
-    private var activeChatRef: CollectionReference {
+    private var activeChatsRef: CollectionReference {
          return db.collection(["users",currentUser.id,"activeChats"].joined(separator: "/"))
      }
      
@@ -152,17 +151,16 @@ import UIKit
          }
      }
      
-     func changeToActive(chat: MChat, completion: @escaping (Result<Void,Error>) -> Void) {
-         getWaitingChatsMessage(chat: chat) { result in
+     func changeToActive(chat: MChat, completion: @escaping (Result<Void, Error>) -> Void) {
+         getWaitingChatsMessage(chat: chat) { (result) in
              switch result {
-                 
              case .success(let messages):
-                 self.deleteWaitingChat(chat: chat) { result in
-                     switch result{
-                     case .success():
-                         self.createActiveChat(chat: chat, messages: messages) { result in
+                 self.deleteWaitingChat(chat: chat) { (result) in
+                     switch result {
+                     case .success:
+                         self.createActiveChat(chat: chat, messages: messages) { (result) in
                              switch result {
-                             case .success():
+                             case .success:
                                  completion(.success(Void()))
                              case .failure(let error):
                                  completion(.failure(error))
@@ -178,17 +176,15 @@ import UIKit
          }
      }
      
-     
-     
-     func createActiveChat(chat: MChat,messages: [MMessage],completion: @escaping (Result<Void,Error>) -> Void){
-         let messageRef = activeChatRef.document(chat.friendId).collection("messages")
-         activeChatRef.document(chat.friendId).setData(chat.representation) { error in
+     func createActiveChat(chat: MChat, messages: [MMessage], completion: @escaping (Result<Void, Error>) -> Void) {
+         let messageRef = activeChatsRef.document(chat.friendId).collection("messages")
+         activeChatsRef.document(chat.friendId).setData(chat.representation) { (error) in
              if let error = error {
                  completion(.failure(error))
                  return
              }
              for message in messages {
-                 messageRef.addDocument(data: message.representation) { error in
+                 messageRef.addDocument(data: message.representation) { (error) in
                      if let error = error {
                          completion(.failure(error))
                          return
@@ -197,7 +193,5 @@ import UIKit
                  }
              }
          }
-     
-}
-     
+     }
  }
