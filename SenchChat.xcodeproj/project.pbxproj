@@ -65,6 +65,7 @@
 		F3EB987A27C6747D0013DCF6 /* SingUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB987927C6747D0013DCF6 /* SingUpViewController.swift */; };
 		F3EB987C27C67A0F0013DCF6 /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB987B27C67A0F0013DCF6 /* OneLineTextField.swift */; };
 		F3EB987E27C67F050013DCF6 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB987D27C67F050013DCF6 /* UIStackView + Extension.swift */; };
+		F3ED290227E73F5100987E79 /* UIScrollView + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED290127E73F5000987E79 /* UIScrollView + extension.swift */; };
 		F3FC436627D766ED0079936E /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FC436527D766ED0079936E /* ChatRequestViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -154,6 +155,7 @@
 		F3EB987927C6747D0013DCF6 /* SingUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewController.swift; sourceTree = "<group>"; };
 		F3EB987B27C67A0F0013DCF6 /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
 		F3EB987D27C67F050013DCF6 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
+		F3ED290127E73F5000987E79 /* UIScrollView + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView + extension.swift"; sourceTree = "<group>"; };
 		F3FC436527D766ED0079936E /* ChatRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -363,6 +365,7 @@
 				F3E0542727D3EA4600F2346E /* UIViewController + Extension.swift */,
 				F363CEFA27D511F400DB6473 /* UIView + Extension.swift */,
 				F3EB987227C56AA60013DCF6 /* UIImageView + Extension.swift */,
+				F3ED290127E73F5000987E79 /* UIScrollView + extension.swift */,
 				F349A87727C8D5090028260D /* SegmentedControl + Extension.swift */,
 				F3EB986C27C4E8F80013DCF6 /* UIFont + Extension.swift */,
 				F3B8D58227E0C43C009AF887 /* UIImage + extension.swift */,
@@ -659,6 +662,7 @@
 				F3B8D58527E0F21A009AF887 /* ListenerService.swift in Sources */,
 				F3554FDB27C393FB00B28BA3 /* AppDelegate.swift in Sources */,
 				F3E0542627D3E74B00F2346E /* UserCell.swift in Sources */,
+				F3ED290227E73F5100987E79 /* UIScrollView + extension.swift in Sources */,
 				F3EB987827C647CE0013DCF6 /* ButtonFormView.swift in Sources */,
 				F39D298627DA3B0800140C5E /* UserError.swift in Sources */,
 				F3B59F7827C78A88009D7F96 /* AddPhotoView.swift in Sources */,
