@@ -32,6 +32,7 @@ class ChatsViewController: MessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureMessageInputBar()
+        self.dismissKeyboard()
         if let layer = messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout {
             layer.textMessageSizeCalculator.outgoingAvatarSize = .zero
             layer.textMessageSizeCalculator.incomingAvatarSize = .zero
@@ -100,6 +101,7 @@ extension ChatsViewController {
         messageInputBar.layer.shadowOffset = CGSize(width: 0, height: 4)
         navigationController?.navigationBar.tintColor = .systemBlue
         configureSendButton()
+        configureCameraIcon()
     }
     
     func configureSendButton() {
@@ -110,7 +112,81 @@ extension ChatsViewController {
         messageInputBar.sendButton.setSize(CGSize(width: 48, height: 48), animated: false)
         messageInputBar.middleContentViewPadding.right = -38
     }
+    func configureCameraIcon() {
+        let cameraItem = InputBarButtonItem(type: .system)
+        cameraItem.tintColor = #colorLiteral(red: 0.7595468163, green: 0.4894029498, blue: 0.7564013004, alpha: 1)
+        let cameraImage = UIImage(systemName: "camera")
+        cameraItem.image = cameraImage
+        
+        cameraItem.addTarget(self, action: #selector(cameraButtonPressed), for: .primaryActionTriggered)
+        cameraItem.setSize(CGSize(width: 60, height: 30), animated: false)
+        messageInputBar.leftStackView.alignment = .center
+        messageInputBar.setLeftStackViewWidthConstant(to: 50, animated: false)
+        messageInputBar.setStackViewItems([cameraItem], forStack: .left, animated: false)
+    }
+    
+    @objc private func cameraButtonPressed() {
+        
+        let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+                alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+                    self.openCamera()
+                }))
+
+                alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
+                    self.openGallery()
+                }))
+
+                alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+
+                self.present(alert, animated: true, completion: nil)
+    }
 }
+// MARK: - UIImagePickerController Delegate
+extension ChatsViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+       // fillImageView.circleImageView.image = image
+    }
+}
+
+// MARK: - Photo source type
+extension ChatsViewController {
+    
+    private func openCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        else
+        {
+            let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
+    private func openGallery() {
+       if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
+           let imagePicker = UIImagePickerController()
+           imagePicker.delegate = self
+           imagePicker.allowsEditing = true
+           imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+           self.present(imagePicker, animated: true, completion: nil)
+       }
+       else
+       {
+           let alert  = UIAlertController(title: "Warning", message: "You don't have permission to access gallery.", preferredStyle: .alert)
+           alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+           self.present(alert, animated: true, completion: nil)
+       }
+   }
+}
+
 
 // MARK: - MessagesDataSource
 extension ChatsViewController: MessagesDataSource {

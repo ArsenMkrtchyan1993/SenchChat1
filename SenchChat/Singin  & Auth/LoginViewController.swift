@@ -38,7 +38,7 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .white
         setupConstraints()
         googleButton.customizeGoogleButton()
-        
+        self.dismissKeyboard()
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         singUpButton.addTarget(self, action: #selector(singUpButtonTapped), for: .touchUpInside)
         googleButton.addTarget(self, action: #selector(googleButtonTapped), for: .touchUpInside)

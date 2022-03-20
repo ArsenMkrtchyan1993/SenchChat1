@@ -30,10 +30,7 @@ class SetupProfileViewController: UIViewController {
             if let username = currentUser.displayName {
                 fullNameTextField.text = username
             }
-            if let userPhone = currentUser.phoneNumber{
-                phoneNumberFiled.text = userPhone
-                phoneNumberFiled.isEnabled = false
-            }
+           
             if let photoUrl = currentUser.photoURL {
                 fillImageView.circleImageView.sd_setImage(with: photoUrl, completed: nil)
             }
@@ -45,9 +42,13 @@ class SetupProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.dismissKeyboard()
         view.backgroundColor = .white
         setupConstraints()
+        if let userPhone = currentUser.phoneNumber{
+            phoneNumberFiled.text = userPhone
+            phoneNumberFiled.isEnabled = false
+        }
         goToChatsButton.addTarget(self, action: #selector(goToChatsButtonTappet), for: .touchUpInside)
         fillImageView.plusButton.addTarget(self, action: #selector(plusButtonTappet), for: .touchUpInside)
        

@@ -31,6 +31,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dismissKeyboard()
         view.backgroundColor = .mainWhite()
         setupConstraints()
         customizeElements()

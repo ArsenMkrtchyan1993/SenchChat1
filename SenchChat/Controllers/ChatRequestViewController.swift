@@ -38,6 +38,7 @@ class ChatRequestViewController: UIViewController {
         view.backgroundColor = .red
         customizeElements()
         setupConstraints()
+        self.dismissKeyboard()
         danyButton.addTarget(self, action: #selector(danyButtonTapped), for: .touchUpInside)
         acceptButton.addTarget(self, action: #selector(acceptButtonTapped), for: .touchUpInside)
     }

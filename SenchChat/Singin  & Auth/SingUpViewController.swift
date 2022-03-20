@@ -39,14 +39,22 @@ class SingUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-       
+        self.dismissKeyboard()
         setupConstraints()
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         singUpButton.addTarget(self, action: #selector(singUpButtonTapped), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
-    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+           // if keyboard size is not available for some reason, dont do anything
+           return
+        }
+      
+      // move the root view up by the distance of keyboard height
+      self.view.frame.origin.y = 0 - keyboardSize.height
+    }
     @objc private func singUpButtonTapped() {
         AuthService.shared.register(email: emailTextField.text,
                                     password: passwordTextField.text,

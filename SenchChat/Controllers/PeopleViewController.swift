@@ -44,6 +44,7 @@ class PeopleViewController: UIViewController {
         setupSearchBar()
         setupCollectionView()
         createDataSource()
+        self.dismissKeyboard()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(singOut))
         navigationItem.rightBarButtonItem?.tintColor = .systemBlue
         usersListener = ListenerService.shared.usersObserve(users: users, completion: { result in

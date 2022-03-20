@@ -13,7 +13,6 @@ class PhoneAuthViewController: UIViewController {
     let phoneNumberLabel = UILabel(title: "Phone number white region code")
     let smsCodeLabel = UILabel(title: "Enter code")
     let singIpButton = UIButton(title: "Sign In", titleColor: .white, backgroundColor: .buttonDark(), isShadow: false)
-    
     let phoneNumberTextField = OneLineTextField(font: .avenir20())
     let smsCodeTextField = OneLineTextField(font: .avenir20())
     
@@ -25,7 +24,7 @@ class PhoneAuthViewController: UIViewController {
         view.backgroundColor = .white
         setupConstraints()
         phoneNumberTextField.delegate = self
-        
+        self.dismissKeyboard()
         singIpButton.addTarget(self, action: #selector(singInButtonTapped), for: .touchUpInside)
         
     }
@@ -86,11 +85,10 @@ extension PhoneAuthViewController {
     private func setupConstraints() {
         
         phoneNumberTextField.textContentType = .telephoneNumber
-        smsCodeTextField.keyboardType = .numberPad
+        //smsCodeTextField.keyboardType = .numberPad
         
         phoneNumberTextField.text = "+"
         phoneNumberTextField.returnKeyType = .continue
-   
         let emailStackView = UIStackView(arrangedSubviews: [phoneNumberLabel,phoneNumberTextField],axis: .vertical,spacing: 0)
         let passwordStackView = UIStackView(arrangedSubviews: [smsCodeLabel,smsCodeTextField],axis: .vertical,spacing: 0)
         singIpButton.heightAnchor.constraint(equalToConstant: 60).isActive = true

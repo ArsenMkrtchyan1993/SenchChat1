@@ -225,4 +225,19 @@ import UIKit
          }
      }
      
+     func getImageURL(id: String) -> String {
+         var userImageUrl = ""
+         let docRef = usersRef.document(id)
+         docRef.getDocument { document, error in
+             if let document = document, document.exists {
+                 guard let mUser = MUser(document: document) else {
+                     userImageUrl = ""
+                     return
+                 }
+                 userImageUrl = mUser.avatarStringURL
+             }
+         }
+         return userImageUrl
+     }
+     
  }
