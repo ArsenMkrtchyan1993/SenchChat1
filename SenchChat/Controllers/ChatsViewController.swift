@@ -9,6 +9,7 @@ import UIKit
 import MessageKit
 import InputBarAccessoryView
 import FirebaseFirestore
+import SDWebImage
 
 class ChatsViewController: MessagesViewController {
     
@@ -35,6 +36,7 @@ class ChatsViewController: MessagesViewController {
             layer.textMessageSizeCalculator.outgoingAvatarSize = .zero
             layer.textMessageSizeCalculator.incomingAvatarSize = .zero
         }
+        
         messagesCollectionView.backgroundColor = .mainWhite()
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
@@ -92,12 +94,11 @@ extension ChatsViewController {
         messageInputBar.inputTextView.layer.masksToBounds = true
         messageInputBar.inputTextView.scrollIndicatorInsets = UIEdgeInsets(top: 14, left: 0, bottom: 14, right: 0)
         
-        
         messageInputBar.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         messageInputBar.layer.shadowRadius = 5
         messageInputBar.layer.shadowOpacity = 0.3
         messageInputBar.layer.shadowOffset = CGSize(width: 0, height: 4)
-        
+        navigationController?.navigationBar.tintColor = .systemBlue
         configureSendButton()
     }
     
@@ -166,6 +167,7 @@ extension ChatsViewController: MessagesDisplayDelegate {
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
         return .bubble
     }
+   
 }
 // MARK: - InputBarAccessoryViewDelegate
 extension ChatsViewController: InputBarAccessoryViewDelegate {
