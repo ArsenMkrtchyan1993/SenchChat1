@@ -26,10 +26,12 @@ class PhoneAuthViewController: UIViewController {
         phoneNumberTextField.delegate = self
         self.dismissKeyboard()
         singIpButton.addTarget(self, action: #selector(singInButtonTapped), for: .touchUpInside)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillHideNotification, object: nil)
         
     }
-  
     
+
     @objc private func singInButtonTapped() {
         guard let verifyCode = smsCodeTextField.text, !verifyCode.isEmpty else {
             self.showAlert(title: "Error", message: "Please enter the verify code ")

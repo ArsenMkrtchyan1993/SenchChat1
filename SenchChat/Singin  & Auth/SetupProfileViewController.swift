@@ -52,7 +52,11 @@ class SetupProfileViewController: UIViewController {
         goToChatsButton.addTarget(self, action: #selector(goToChatsButtonTappet), for: .touchUpInside)
         fillImageView.plusButton.addTarget(self, action: #selector(plusButtonTappet), for: .touchUpInside)
        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
     }
+
     @objc private func plusButtonTappet() {
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
                 alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in

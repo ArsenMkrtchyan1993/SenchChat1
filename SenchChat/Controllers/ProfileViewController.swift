@@ -35,8 +35,11 @@ class ProfileViewController: UIViewController {
         view.backgroundColor = .mainWhite()
         setupConstraints()
         customizeElements()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillHideNotification, object: nil)
         
     }
+ 
     
     private func customizeElements() {
         containerView.translatesAutoresizingMaskIntoConstraints = false
