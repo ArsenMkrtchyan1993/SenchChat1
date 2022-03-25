@@ -36,6 +36,8 @@ class ChatsViewController: MessagesViewController {
         if let layer = messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout {
             layer.textMessageSizeCalculator.outgoingAvatarSize = .zero
             layer.textMessageSizeCalculator.incomingAvatarSize = .zero
+            layer.photoMessageSizeCalculator.incomingAvatarSize = .zero
+            layer.photoMessageSizeCalculator.outgoingAvatarSize = .zero
         }
         
         messagesCollectionView.backgroundColor = .mainWhite()
@@ -46,8 +48,21 @@ class ChatsViewController: MessagesViewController {
         messageListener = ListenerService.shared.messagesObserve(chat: chat, completion: { result  in
             switch result {
                 
-            case .success(let message):
+            case .success(var message):
+                if let url = message.downloadUrl  {
+                    StorageService.shared.downloadImage(url: url) { [weak self] result in
+                        guard let self = self else { return }
+                        switch result {
+                        case .success(let image):
+                            message.image = image
+                            self.insertNewMessages(message: message)
+                        case .failure(let error):
+                            self.showAlert(title: "Error", message: error.localizedDescription)
+                        }
+                    }
+                }else {
                 self.insertNewMessages(message: message)
+                }
             case .failure(let error):
                 self.showAlert(title: "Error", message: error.localizedDescription)
             }
@@ -59,7 +74,6 @@ class ChatsViewController: MessagesViewController {
     }
     
     private func insertNewMessages(message: MMessage) {
-        
         guard !messages.contains(message) else { return }
         messages.append(message)
         messages.sort()
@@ -73,15 +87,32 @@ class ChatsViewController: MessagesViewController {
         }
     }
     
+    private func sendPhoto(image:UIImage) {
+        StorageService.shared.uploadImageMessage(photo: image, to: chat) { result in
+            switch result {
+                
+            case .success(let url):
+                var message = MMessage(user: self.user, image: image)
+                message.downloadUrl = url
+                FirestoreService.shared.sendMessage(chat: self.chat, message: message) { result in
+                    switch result {
+                        
+                    case .success():
+                        self.messagesCollectionView.scrollToLastItem()
+                    case .failure(let error):
+                        self.showAlert(title: "Error", message: error.localizedDescription)
+                    }
+                }
+            case .failure(let error):
+                self.showAlert(title: "Error", message: error.localizedDescription)
+            }
+        }
+    }
     
 }
 // MARK: - ConfigureMessageInputBar
 extension ChatsViewController {
-    
-    
-    
     func configureMessageInputBar() {
-        
         messageInputBar.isTranslucent = true
         messageInputBar.separatorLine.isHidden = true
         messageInputBar.backgroundView.backgroundColor = .mainWhite()
@@ -131,22 +162,20 @@ extension ChatsViewController {
                 alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
                     self.openCamera()
                 }))
-
                 alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
                     self.openGallery()
                 }))
-
                 alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-
                 self.present(alert, animated: true, completion: nil)
     }
 }
+
 // MARK: - UIImagePickerController Delegate
 extension ChatsViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
-       // fillImageView.circleImageView.image = image
+        sendPhoto(image:image)
     }
 }
 

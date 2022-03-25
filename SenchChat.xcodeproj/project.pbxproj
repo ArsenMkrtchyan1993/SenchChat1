@@ -39,6 +39,7 @@
 		F3AD057A27CFFCEA00FDF0A1 /* Bundle - extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AD057927CFFCEA00FDF0A1 /* Bundle - extension.swift */; };
 		F3AD057D27D005F500FDF0A1 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = F3AD057B27D005F500FDF0A1 /* activeChats.json */; };
 		F3AD057E27D005F500FDF0A1 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = F3AD057C27D005F500FDF0A1 /* waitingChats.json */; };
+		F3B04A9B27ECD87A005B8BA4 /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B04A9A27ECD87A005B8BA4 /* ImageItem.swift */; };
 		F3B59F7627C77FDB009D7F96 /* SetupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B59F7527C77FDB009D7F96 /* SetupProfileViewController.swift */; };
 		F3B59F7827C78A88009D7F96 /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B59F7727C78A88009D7F96 /* AddPhotoView.swift */; };
 		F3B8D58127E0BF86009AF887 /* StorageServiceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B8D58027E0BF86009AF887 /* StorageServiceImage.swift */; };
@@ -129,6 +130,7 @@
 		F3AD057927CFFCEA00FDF0A1 /* Bundle - extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle - extension.swift"; sourceTree = "<group>"; };
 		F3AD057B27D005F500FDF0A1 /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = activeChats.json; path = "../../../../mp3/[SwiftBook] Программирование на Swift/28. Курс По Мессенджеру IChat/17. Cell GradientView/17. урок/IChat/Extensions/UIKIt/activeChats.json"; sourceTree = "<group>"; };
 		F3AD057C27D005F500FDF0A1 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = waitingChats.json; path = "../../../../mp3/[SwiftBook] Программирование на Swift/28. Курс По Мессенджеру IChat/17. Cell GradientView/17. урок/IChat/Extensions/UIKIt/waitingChats.json"; sourceTree = "<group>"; };
+		F3B04A9A27ECD87A005B8BA4 /* ImageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageItem.swift; sourceTree = "<group>"; };
 		F3B59F7527C77FDB009D7F96 /* SetupProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewController.swift; sourceTree = "<group>"; };
 		F3B59F7727C78A88009D7F96 /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
 		F3B8D58027E0BF86009AF887 /* StorageServiceImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceImage.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 				F3E0542027D39A4200F2346E /* MUser.swift */,
 				F3E0542227D39A6B00F2346E /* MChat.swift */,
 				F3B8D58827E2154B009AF887 /* MMessage.swift */,
+				F3B04A9A27ECD87A005B8BA4 /* ImageItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -684,6 +687,7 @@
 				F3554FE527C393FB00B28BA3 /* SenchChat.xcdatamodeld in Sources */,
 				F3B8D58727E2104B009AF887 /* UIApplication + extension.swift in Sources */,
 				F349A87827C8D50A0028260D /* SegmentedControl + Extension.swift in Sources */,
+				F3B04A9B27ECD87A005B8BA4 /* ImageItem.swift in Sources */,
 				F3E0542327D39A6B00F2346E /* MChat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -854,11 +858,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WLMWR54MBP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SenchChat/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need camera access to take pictures";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -870,6 +876,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = smu117.SenchChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -882,11 +889,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WLMWR54MBP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SenchChat/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need camera access to take pictures";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -898,6 +907,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = smu117.SenchChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
