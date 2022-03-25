@@ -56,29 +56,5 @@ class InsertableTextField: UITextField {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-     
-    
-}
-// MARK: - SwiftUI
-
-
-import SwiftUI
-
-struct InsertableTextFieldVCProvider: PreviewProvider {
-    static var previews: some View {
-        ContainerView().edgesIgnoringSafeArea(.all)
-    }
-    
-    struct ContainerView: UIViewControllerRepresentable {
-        
-        let ProfileVC = ProfileViewController()
-        
-        func makeUIViewController(context: UIViewControllerRepresentableContext<InsertableTextFieldVCProvider.ContainerView>) -> ProfileViewController {
-            return ProfileVC
-        }
-        
-        func updateUIViewController(_ uiViewController: InsertableTextFieldVCProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<InsertableTextFieldVCProvider.ContainerView>) {
-            
-        }
-    }
+ 
 }

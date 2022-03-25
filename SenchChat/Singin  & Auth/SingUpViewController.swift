@@ -39,13 +39,13 @@ class SingUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-       
+        self.dismissKeyboard()
         setupConstraints()
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillHideNotification, object: nil)
         singUpButton.addTarget(self, action: #selector(singUpButtonTapped), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
-    
     
     @objc private func singUpButtonTapped() {
         AuthService.shared.register(email: emailTextField.text,
@@ -145,17 +145,4 @@ struct SingUpVCProvider: PreviewProvider {
         }
     }
     
-}
-
-extension UIViewController {
-    
-    
-    func showAlert(title:String, message: String,completion: @escaping () -> Void = {}){
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title:"OK",style:.default) { (_)
-            in completion()
-        }
-        alertController.addAction(okAction)
-        present(alertController, animated: true, completion: nil)
-    }
 }

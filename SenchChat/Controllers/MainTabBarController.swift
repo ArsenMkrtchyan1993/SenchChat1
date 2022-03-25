@@ -26,7 +26,7 @@ class MainTabBarController: UITabBarController {
     
     override func viewDidLoad()  {
         super.viewDidLoad()
-        
+        self.dismissKeyboard()
         let listVC = ListViewController(currentUser: currentUser)
         let peopleVC = PeopleViewController(currentUser: currentUser)
         let boldConfig = UIImage.SymbolConfiguration(weight:.medium)
